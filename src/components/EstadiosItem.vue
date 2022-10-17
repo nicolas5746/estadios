@@ -139,7 +139,7 @@ export default {
 .info-estadios
     height: 100%
     line-height: 0.95rem
-    padding: 8% 3%
+    padding: 6% 2%
     position: absolute
     width: 100%
     & h1
@@ -228,7 +228,7 @@ export default {
         padding: 2% 0 35% 1%
     .info-estadios 
         line-height: 0.55rem
-        padding: 6% 2%
+        padding: 5% 2%
         & h1
             & span
                 font-size: 0.4rem
