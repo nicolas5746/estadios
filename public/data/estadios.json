@@ -422,7 +422,7 @@
             "nombre": "Estadio José Nasazzi",
             "capacidad": 5002,
             "propietario": "Club Atlético Bella Vista",
-            "imagen": "https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/nasazzi.jpg",
+            "imagen": "https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/nasazzi.png",
             "inauguracion": 1931,
             "localidad": "Prado",
             "departamento": "Montevideo",
@@ -529,17 +529,28 @@
         },
         {
             "id": "47",
+            "nombre": "Estadio Juan José Vispo Mari",
+            "capacidad": 4000,
+            "propietario": "Liga de las Colonias Agrarias de Salto",
+            "imagen": "https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/vispo-mari.jpg",
+            "inauguracion": "1967",
+            "localidad": "Salto",
+            "departamento": "Salto",
+            "wikipedia": "https://es.wikipedia.org/wiki/Estadio_Juan_Jos%C3%A9_Vispo_Mari"
+        },
+        {
+            "id": "48",
             "nombre": "Estadio Municipal Casto Martínez Laguarda",
             "capacidad": 3810,
             "propietario": "Intendencia Municipal de San José",
-            "imagen": "https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/laguarda.jpg",
+            "imagen": "https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/laguarda.png",
             "inauguracion": 1943,
             "localidad": "San José de Mayo",
             "departamento": "San José",
             "wikipedia": "https://es.wikipedia.org/wiki/Estadio_Municipal_Casto_Mart%C3%ADnez_Laguarda"
         },
         {
-            "id": "48",
+            "id": "49",
             "nombre": "Estadio Walter Martinez Cerruti",
             "capacidad": 3500,
             "propietario": "Con los mismos colores FC",
@@ -550,7 +561,7 @@
             "wikipedia": "https://bishopjimarends.com/estadio-walter-martinez-cerrutti-16189271843397292310/"
         },
         {
-            "id": "49",
+            "id": "50",
             "nombre": "Parque Maracaná",
             "capacidad": 3364,
             "propietario": "Club Sportivo Cerrito",
@@ -561,7 +572,7 @@
             "wikipedia": "https://es.wikipedia.org/wiki/Estadio_Parque_Maracan%C3%A1"
         },
         {
-            "id": "50",
+            "id": "51",
             "nombre": "Estadio Abraham Paladino",
             "capacidad": 3200,
             "propietario": "Club Atlético Progreso",
@@ -572,7 +583,7 @@
             "wikipedia": "https://es.wikipedia.org/wiki/Estadio_Abraham_Paladino"
         },
         {
-            "id": "51",
+            "id": "52",
             "nombre": "Parque Huracán",
             "capacidad": 3084,
             "propietario": "Club Social y Deportivo Huracán Buceo",
@@ -583,7 +594,7 @@
             "wikipedia": "https://es.wikipedia.org/wiki/Estadio_Parque_Hurac%C3%A1n"
         },
         {
-            "id": "52",
+            "id": "53",
             "nombre": "Parque Cincuentenario Juan G. Prandi",
             "capacidad": 3000,
             "propietario": "Club Plaza Colonia de Deportes",
@@ -594,7 +605,7 @@
             "wikipedia": "https://es.wikipedia.org/wiki/Parque_Cincuentenario_Juan_G._Prandi"
         },
         {
-            "id": "53",
+            "id": "54",
             "nombre": "Estadio Víctor Della Valle",
             "capacidad": 2500,
             "propietario": "Centro Cultural y Deportivo El Tanque Sisley",
@@ -605,7 +616,7 @@
             "wikipedia": "https://es.wikipedia.org/wiki/Estadio_V%C3%ADctor_Della_Valle"
         },
         {
-            "id": "54",
+            "id": "55",
             "nombre": "Parque \"El Fortín\" Carlos Ángel Fossa ",
             "capacidad": 2466,
             "propietario": "Institución Atlética Sud América",
@@ -616,7 +627,7 @@
             "wikipedia": "https://es.wikipedia.org/wiki/Estadio_Parque_Carlos_%C3%81ngel_Fossa"
         },
         {
-            "id": "55",
+            "id": "56",
             "nombre": "Parque Alfredo García Montero",
             "capacidad": 2165,
             "propietario": "Lavalleja Fútbol Club",
@@ -627,7 +638,7 @@
             "wikipedia": "https://es.wikipedia.org/wiki/Estadio_Complejo_Lavalleja"
         },
         {
-            "id": "56",
+            "id": "57",
             "nombre": "Parque el Balneario",
             "capacidad": 2000,
             "propietario": "Club Deportivo Parque del Plata",
@@ -638,7 +649,7 @@
             "wikipedia": "https://es.wikipedia.org/wiki/Estadio_Parque_El_Balneario"
         },
         {
-            "id": "57",
+            "id": "58",
             "nombre": "Parque Pedro Ángel Bossio",
             "capacidad": 2000,
             "propietario": "Huracán Fútbol Club",
@@ -649,7 +660,7 @@
             "wikipedia": "#"
         },
         {
-            "id": "58",
+            "id": "59",
             "nombre": "Parque ANCAP",
             "capacidad": 1500,
             "propietario": "Uruguay Montevideo Football Club",
@@ -660,7 +671,7 @@
             "wikipedia": "https://es.wikipedia.org/wiki/Estadio_Parque_ANCAP"
         },
         {
-            "id": "59",
+            "id": "60",
             "nombre": "Parque Oriental",
             "capacidad": 1500,
             "propietario": "Club Oriental de Football",
@@ -671,7 +682,7 @@
             "wikipedia": "https://es.wikipedia.org/wiki/Estadio_Parque_Oriental"
         },
         {
-            "id": "60",
+            "id": "61",
             "nombre": "Parque Dr. Enrique Falco Lichtemberger",
             "capacidad": 1500,
             "propietario": "Albion Football Club,",
@@ -682,7 +693,7 @@
             "wikipedia": "https://es.wikipedia.org/wiki/Estadio_Parque_Dr._Enrique_Falco_Lichtemberger"
         },
         {
-            "id": "61",
+            "id": "62",
             "nombre": "Estadio C.A. Progreso",
             "capacidad": 1500,
             "propietario": "Club Atlético Progreso (Estación Atlántida)",
@@ -693,7 +704,7 @@
             "wikipedia": "https://es.wikipedia.org/wiki/Estadio_de_Progreso"
         },
         {
-            "id": "62",
+            "id": "63",
             "nombre": "Complejo Anselmo Meirana",
             "capacidad": 1500,
             "propietario": "Piriápolis Fútbol Club",
