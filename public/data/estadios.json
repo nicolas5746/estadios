@@ -30,7 +30,7 @@
             "inauguracion": 1930,
             "localidad": "Parque Batlle",
             "departamento": "Montevideo",
-            "wikipedia": "https://es.wikipedia.org/wiki/Estadio_Centenario"
+            "wikipedia": "http://www.estadiocentenario.com.uy/"
         },
         {
             "id": "02",
@@ -41,7 +41,7 @@
             "inauguracion": 2016,
             "localidad": "Bañados de Carrasco",
             "departamento": "Montevideo",
-            "wikipedia": "https://es.wikipedia.org/wiki/Estadio_Campe%C3%B3n_del_Siglo"
+            "wikipedia": "https://www.peñarol.org/categoria/Estadio-159/"
         },
         {
             "id": "03",
@@ -52,14 +52,14 @@
             "inauguracion": 1900,
             "localidad": "La Blanqueada",
             "departamento": "Montevideo",
-            "wikipedia": "https://es.wikipedia.org/wiki/Estadio_Gran_Parque_Central"
+            "wikipedia": "https://nacional.uy/es/club/instalaciones/gran-parque-central/"
         },
         {
             "id": "04",
             "nombre": "Estadio Atilio Paiva Olivera",
             "capacidad": 27135,
             "propietario": "Intendencia Municipal de Rivera",
-            "imagen": "https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/paiva.jpg",
+            "imagen": "https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/paiva.png",
             "inauguracion": 1927,
             "localidad": "Rivera",
             "departamento": "Rivera",
@@ -92,18 +92,18 @@
             "nombre": "Estadio María Mincheff de Lazaroff",
             "capacidad": 18000,
             "propietario": "Danubio Fútbol Club",
-            "imagen": "https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/jardines.png",
+            "imagen": "https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/jardines.jpg",
             "inauguracion": 1957,
             "localidad": "Jardines del Hipódromo",
             "departamento": "Montevideo",
-            "wikipedia": "https://es.wikipedia.org/wiki/Estadio_Jardines_del_Hip%C3%B3dromo_Mar%C3%ADa_Mincheff_de_Lazaroff"
+            "wikipedia": "http://www.danubio.org.uy/uc_24_1.html"
         },
         {
             "id": "08",
             "nombre": "Estadio Domingo Burgueño Miguel",
             "capacidad": 17172,
             "propietario": "Intendencia Municipal de Maldonado",
-            "imagen": "https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/campus.png",
+            "imagen": "https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/campus.jpg",
             "inauguracion": 1994,
             "localidad": "Maldonado",
             "departamento": "Maldonado",
@@ -118,7 +118,7 @@
             "inauguracion": 1963,
             "localidad": "Parque Rodó",
             "departamento": "Montevideo",
-            "wikipedia": "https://es.wikipedia.org/wiki/Estadio_Luis_Franzini"
+            "wikipedia": "https://defensorsporting.com.uy/institucion/sedes-y-complejos/estadio-luis-franzini/"
         },
         {
             "id": "10",
@@ -411,7 +411,7 @@
             "nombre": "Estadio Campeones Olímpicos",
             "capacidad": 5124,
             "propietario": "Intendencia Municipal de Florida",
-            "imagen": "https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/campeones-olimpicos.jpg",
+            "imagen": "https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/campeones-olimpicos.png",
             "inauguracion": 1927,
             "localidad": "Florida",
             "departamento": "Florida",
@@ -444,7 +444,7 @@
             "nombre": "Estadio \"La Bombonera\"",
             "capacidad": 5000,
             "propietario": "Club Atlético Basáñez",
-            "imagen": "https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/bombonera.jpg",
+            "imagen": "https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/bombonera.png",
             "inauguracion": 1981,
             "localidad": "Malvín Norte",
             "departamento": "Montevideo",
@@ -620,7 +620,7 @@
             "nombre": "Parque \"El Fortín\" Carlos Ángel Fossa ",
             "capacidad": 2466,
             "propietario": "Institución Atlética Sud América",
-            "imagen": "https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/el-fortin.jpg",
+            "imagen": "https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/el-fortin.png",
             "inauguracion": 1935,
             "localidad": "Pérez Castellanos",
             "departamento": "Montevideo",
