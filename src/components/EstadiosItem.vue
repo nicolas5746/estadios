@@ -15,6 +15,18 @@ export default {
         async getDepartamentoSeleccionado(departamento) {
             this.departamentoSeleccionado = departamento;
         },
+        getImagenExpandida(index) {
+            return {
+                'imagen-estadio-expandida': this.indice === index,
+            }
+        },
+        getIndice(index) {
+            if (this.indice === index) {
+                this.indice = null;
+            } else {
+                this.indice = index;
+            }
+        },
     },
     async mounted() {
         await this.getData();
@@ -27,12 +39,14 @@ export default {
         const textoBoton = 'Más información';
         const textoSelect = 'Seleccionar...';
         let departamentoSeleccionado = '';
+        let indice = null;
         return {
             botonReiniciar,
             departamentos,
             departamentoSeleccionado,
             estadios,
             etiquetaSelect,
+            indice,
             textoBoton,
             textoSelect,
         }
@@ -41,29 +55,30 @@ export default {
 </script>
 
 <template>
-    <div class="estadios">
-        <div class="seleccionar-departamentos">
-            <DepartamentosItem :etiquetaSelect="etiquetaSelect" :textoSelect="textoSelect"
-                :departamentos="departamentos" :departamentoSeleccionado="departamentoSeleccionado"
-                @seleccion="getDepartamentoSeleccionado" :botonReiniciar="botonReiniciar" />
+    <div class='estadios'>
+        <div class='seleccionar-departamentos'>
+            <DepartamentosItem :etiquetaSelect='etiquetaSelect' :textoSelect='textoSelect' :departamentos='departamentos'
+                :departamentoSeleccionado='departamentoSeleccionado' @seleccion='getDepartamentoSeleccionado'
+                :botonReiniciar='botonReiniciar' />
         </div>
-        <div class="mapa" v-if="!departamentoSeleccionado"><img
-                src="https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/mapa.png"
-                alt="Departamentos" title="Departamentos" />
+        <div class='mapa' v-if='!departamentoSeleccionado'>
+            <img src='https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/mapa.png'
+                alt='Departamentos' title='Departamentos' />
         </div>
-        <div class="estadios-grid">
-            <div class="estadios-overlay" v-for="estadio in estadios" :key="estadio.id"
-                v-show="estadio.departamento === departamentoSeleccionado">
-                <img :src="estadio.imagen" :alt="estadio.nombre" :title="estadio.nombre" />
-                <div class="estadios-seleccionados">
-                    <div class="info-estadios">
+        <div class='estadios-grid'>
+            <div class='estadios-overlay' v-for='(estadio, index) in estadios' :key='estadio'
+                v-show='estadio.departamento === departamentoSeleccionado' @click='() => getIndice(index)'>
+                <img class='imagen-estadio' :class='getImagenExpandida(index)' :src='estadio.imagen' :alt='estadio.nombre'
+                    :title='estadio.nombre' />
+                <div class='estadios-seleccionados'>
+                    <div class='info-estadios'>
                         <h1><span>{{ estadio.nombre }}</span></h1>
                         <p>Capacidad: {{ estadio.capacidad }}</p>
                         <p>Propietario: {{ estadio.propietario }}</p>
                         <p>Ciudad/Localidad: {{ estadio.localidad }}</p>
                         <p>Inauguración: {{ estadio.inauguracion }}</p>
-                        <button class="detalles" type="button">
-                            <a :href="estadio.wikipedia" target="_blank">{{ textoBoton }}</a>
+                        <button class='detalles' type='button'>
+                            <a :href='estadio.wikipedia' target='_blank'>{{ textoBoton }}</a>
                         </button>
                     </div>
                 </div>
@@ -72,7 +87,7 @@ export default {
     </div>
 </template>
 
-<style lang="sass">
+<style lang='sass'>
 @use '@styles/colours'
 @use '@styles/fonts'
 
@@ -105,6 +120,7 @@ export default {
 
 .estadios-overlay
     align-items: center
+    cursor: pointer
     display: flex
     justify-content: center
     position: relative
@@ -113,17 +129,38 @@ export default {
     &:active
         & .estadios-seleccionados
             transform: rotateX(0deg)
-        & img
+        & .imagen-estadio
             box-shadow: 0.2em 0.2em 0.2em 0.2em colours.$roman-silver
             opacity: 0.5
             &:not(:hover)
-                filter: brightness(0.9) saturate(0) contrast(1.2) blur(0.3rem)      
-    & img
-        border-radius: 2em
-        filter: brightness(1.2) saturate(1.1) contrast(0.85)
-        height: 30vh
-        transition: 0.3s
-        width: 100%
+                filter: brightness(0.9) saturate(0) contrast(1.2) blur(0.3rem)
+        & .imagen-estadio-expandida
+            opacity: 1
+            &:not(:hover)
+                filter: brightness(1.2) saturate(1.1) contrast(1.2)
+
+.imagen-estadio
+    border-radius: 2em
+    filter: brightness(1.2) saturate(1.1) contrast(0.85)
+    height: 30vh
+    position: relative
+    transition: 0.3s
+    width: 100%
+    z-index: 0
+
+.imagen-estadio-expandida
+    border-radius: 2em
+    cursor: grab
+    height: 100%
+    left: 50%
+    margin-left: -50%
+    margin-top: -46.5vh
+    padding: 0.5%
+    position: fixed
+    top: 50%
+    transition: 0.3s
+    width: 100%
+    z-index: 1
 
 .estadios-seleccionados
     background-color: colours.$transparent-dark-grey
@@ -173,14 +210,16 @@ export default {
                 color: colours.$neon-orange
 
 @media screen and (max-width: 320px)
-    .estadios-overlay
-        & img
-            border-radius: 0.5em
-            height: 9vh
+    .imagen-estadio
+        border-radius: 0.5em
+        height: 9vh
+
     .estadios-seleccionados
         border-radius: 0.5em
+
     .estadios-grid
         padding: 7.5% 0 30% 5%
+
     .seleccionar-departamentos
         width: 35%
     
@@ -197,14 +236,16 @@ export default {
         font-size: 0.15rem
 
 @media screen and (min-width: 321px) and (max-width: 480px)
-    .estadios-overlay
-        & img
-            border-radius: 1em
-            height: 10vh
+    .imagen-estadio
+        border-radius: 1em
+        height: 10vh
+
     .estadios-seleccionados
         border-radius: 1em
+
     .estadios-grid
         padding: 5% 0 50% 5%
+
     .info-estadios
         line-height: 0.35rem
         padding: 2% 1%
@@ -218,14 +259,16 @@ export default {
         font-size: 0.3rem
 
 @media screen and (min-width: 481px) and (max-width: 991px)
-    .estadios-overlay
-        & img
-            border-radius: 1.5em
-            height: 13vh
+    .imagen-estadio
+        border-radius: 1.5em
+        height: 13vh
+
     .estadios-seleccionados
         border-radius: 1.5em
+
     .estadios-grid
         padding: 2% 0 35% 1%
+
     .info-estadios 
         line-height: 0.55rem
         padding: 5% 2%
@@ -238,14 +281,22 @@ export default {
     .detalles
         font-size: 0.5rem
 
+@media screen and (max-width: 991px)
+    .imagen-estadio-expandida
+        height: 45vh
+
 @media screen and (min-width: 992px) and (max-width: 1199px)
-    .estadios-overlay
-        & img
-            border-radius: 1.5em
-            height: 21vh
+    .imagen-estadio
+        border-radius: 1.5em
+        height: 21vh
+
+    .imagen-estadio-expandida
+        height: 60vh
+
     .estadios-grid
         padding: 2% 0 30% 1%
-    .info-estadios 
+
+    .info-estadios
         line-height: 0.65rem
         & h1
             & span

@@ -14,15 +14,15 @@ export default {
     <footer>
         <div>
             <h1>{{ titulo }}<img
-                    src="https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/football-02.png"
-                    alt="Estadios del Uruguay" title="Estadios del Uruguay" />
+                    src='https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/football-02.png'
+                    alt='Estadios del Uruguay' title='Estadios del Uruguay' />
             </h1>
             <p>{{ nombreCompleto }} &copy; {{ copyright }}</p>
         </div>
     </footer>
 </template>
 
-<style lang="sass">
+<style lang='sass'>
 @use '@styles/colours'
 @use '@styles/fonts'
 

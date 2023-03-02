@@ -1,10 +1,10 @@
 <script>
 import { RouterLink, RouterView } from 'vue-router';
 export default {
-    name: "NavbarItem",
+    name: 'NavbarItem',
     data() {
-        const homeNavTitle = "inicio";
-        const estadiosNavTitle = "estadios";
+        const homeNavTitle = 'inicio';
+        const estadiosNavTitle = 'estadios';
         return {
             homeNavTitle, estadiosNavTitle,
         }
@@ -15,14 +15,14 @@ export default {
 <template>
     <div>
         <nav>
-            <RouterLink to="/">{{ homeNavTitle }}</RouterLink>
-            <RouterLink to="/estadios">{{ estadiosNavTitle }}</RouterLink>
+            <RouterLink to='/'>{{ homeNavTitle }}</RouterLink>
+            <RouterLink to='/estadios'>{{ estadiosNavTitle }}</RouterLink>
         </nav>
         <RouterView />
     </div>
 </template>
 
-<style lang="sass">
+<style lang='sass'>
 @use '@styles/colours'
 @use '@styles/fonts'
 

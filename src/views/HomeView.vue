@@ -13,20 +13,20 @@ export default {
 
 <template>
   <main>
-    <div class="home-view">
-      <img src="https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/football-01.png"
-        alt="Estadios del Uruguay" title="Estadios del Uruguay" />
+    <div class='home-view'>
+      <img src='https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/football-01.png'
+        alt='Estadios del Uruguay' title='Estadios del Uruguay' />
       <h1>{{ titulo }}</h1>
       <p>{{ descripcion }}</p>
       <button>
-        <RouterLink to="/estadios" class="button">{{ boton }}</RouterLink>
+        <RouterLink to='/estadios' class='button'>{{ boton }}</RouterLink>
       </button>
     </div>
     <RouterView />
   </main>
 </template>
 
-<style lang="sass">
+<style lang='sass'>
 @use '@styles/colours'
 @use '@styles/fonts'
 

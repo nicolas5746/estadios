@@ -4,13 +4,13 @@ import NavbarItem from '@/components/NavbarItem.vue';
 </script>
   
 <template>
-  <div class="page">
+  <div class='page'>
     <NavbarItem />
     <FooterItem />
   </div>
 </template>
   
-<style scoped lang="sass">
+<style scoped lang='sass'>
 @use '@styles/colours'
 
 .page

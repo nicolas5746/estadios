@@ -20,17 +20,17 @@ export default {
 </script>
 
 <template>
-    <div class="select">
-        <label for="seleccionar-departamento">{{ etiquetaSelect }}</label>
-        <select id="seleccionar-departamento" v-model="departamentoSeleccionado" @change="seleccionPorDepartamento">
-            <option disabled value="">{{ textoSelect }}</option>
-            <option v-for="departamento in departamentos">{{ departamento }}</option>
+    <div class='select'>
+        <label for='seleccionar-departamento'>{{ etiquetaSelect }}</label>
+        <select id='seleccionar-departamento' v-model='departamentoSeleccionado' @change='seleccionPorDepartamento'>
+            <option disabled value=''>{{ textoSelect }}</option>
+            <option v-for='departamento in departamentos'>{{ departamento }}</option>
         </select>
-        <button type="button" @click="reinciarPagina">{{ botonReiniciar }}</button>
+        <button type='button' @click='reinciarPagina'>{{ botonReiniciar }}</button>
     </div>
 </template>
 
-<style lang="sass">
+<style lang='sass'>
 @use '@styles/colours'
 @use '@styles/fonts'
 
