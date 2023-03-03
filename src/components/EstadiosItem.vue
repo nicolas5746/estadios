@@ -9,11 +9,11 @@ export default {
     methods: {
         async getData() {
             const response = await axios.get('https://raw.githubusercontent.com/nicolas5746/estadios/master/public/data/estadios.json');
-            this.departamentos = response.data.departamentos;
-            this.estadios = response.data.estadios;
+            this.departamentos = await response.data.departamentos;
+            this.estadios = await response.data.estadios;
         },
         async getDepartamentoSeleccionado(departamento) {
-            this.departamentoSeleccionado = departamento;
+            this.departamentoSeleccionado = await departamento;
         },
         getImagenExpandida(index) {
             return {
