@@ -10,29 +10,30 @@ export default {
         }
     },
     props: {
-        botonReiniciar: String,
         departamentos: Array,
         departamentoSeleccionado: String,
-        etiquetaSelect: String,
-        textoSelect: String,
     },
 }
 </script>
 
 <template>
     <div class='select'>
-        <label for='seleccionar-departamento'>{{ etiquetaSelect }}</label>
+        <label for='seleccionar-departamento'>Seleccionar departamento</label>
         <select id='seleccionar-departamento' v-model='departamentoSeleccionado' @change='seleccionPorDepartamento'>
-            <option disabled value=''>{{ textoSelect }}</option>
+            <option disabled value=''>Seleccionar...</option>
             <option v-for='departamento in departamentos'>{{ departamento }}</option>
         </select>
-        <button type='button' @click='reinciarPagina'>{{ botonReiniciar }}</button>
+        <button type='button' @click='reinciarPagina'>Reiniciar</button>
     </div>
 </template>
 
 <style lang='sass'>
 @use '@styles/colours'
 @use '@styles/fonts'
+
+#seleccionar-departamento
+        font-size: 0.9rem
+        margin: 2% auto
 
 .select
     align-items: center
@@ -67,27 +68,24 @@ export default {
             color: colours.$dark-orange
         &:active
             color: colours.$neon-orange
-#seleccionar-departamento
-        font-size: 0.9rem
-        margin: 2% auto
 
 @media screen and (max-width: 599px)
+    #seleccionar-departamento
+        font-size: 0.4rem
+
     .select
         label
             font-size: 0.5rem
         button
             font-size: 0.3rem
 
-    #seleccionar-departamento
-        font-size: 0.4rem
-
 @media screen and (min-width: 600px) and (max-width: 1199px)
+    #seleccionar-departamento
+        font-size: 0.6rem
+
     .select
         label
             font-size: 0.7rem
         button
             font-size: 0.5rem
-            
-    #seleccionar-departamento
-        font-size: 0.6rem
 </style>
