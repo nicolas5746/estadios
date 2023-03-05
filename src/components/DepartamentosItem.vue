@@ -18,12 +18,12 @@ export default {
 
 <template>
     <div class='select'>
-        <label for='seleccionar-departamento'>Seleccionar departamento</label>
+        <label for='seleccionar-departamento'>{{ `Seleccionar departamento` }}</label>
         <select id='seleccionar-departamento' v-model='departamentoSeleccionado' @change='seleccionPorDepartamento'>
-            <option disabled value=''>Seleccionar...</option>
+            <option disabled value=''>{{ `Seleccionar...` }}</option>
             <option v-for='departamento in departamentos'>{{ departamento }}</option>
         </select>
-        <button type='button' @click='reinciarPagina'>Reiniciar</button>
+        <button type='button' @click='reinciarPagina'>{{ `Reiniciar` }}</button>
     </div>
 </template>
 

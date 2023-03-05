@@ -56,8 +56,8 @@ export default {
 <template>
     <div class='estadios'>
         <div class='seleccionar-departamentos'>
-            <DepartamentosItem :departamentos='departamentos' :departamentoSeleccionado='departamentoSeleccionado'
-                @seleccion='getDepartamentoSeleccionado' />
+            <DepartamentosItem :departamentos='departamentos' :modelValue='departamentoSeleccionado'
+                @update:modelValue='$event => departamentoSeleccionado = $event' @seleccion='getDepartamentoSeleccionado' />
         </div>
         <div class='mapa' v-if='!departamentoSeleccionado'>
             <img :src='mapa' alt='Departamentos' title='Departamentos' />
@@ -135,14 +135,15 @@ export default {
                 filter: brightness(0.9) saturate(0) contrast(1.2) blur(0.3rem)
         & .imagen-estadio-expandida
             border-radius: 0
-            filter: brightness(1.2) saturate(1.1) contrast(1.2)
+            filter: brightness(1.2) saturate(1.1) contrast(1)
             opacity: 1
             &:not(:hover)
-                filter: brightness(1.2) saturate(1.1) contrast(1.2)
-
+                filter: brightness(1.2) saturate(1.1) contrast(1)
+                opacity: 1
+            
 .imagen-estadio
     border-radius: 2em
-    filter: brightness(1.2) saturate(1.1) contrast(0.85)
+    filter: brightness(1.2) saturate(1.1) contrast(1)
     height: 30vh
     position: relative
     transition: 0.3s
@@ -171,7 +172,7 @@ export default {
     position: fixed
     top: 50%
     transition: 0.3s
-    width: 100%
+    width: 98vw
     z-index: 2
 
 .estadios-seleccionados
@@ -226,6 +227,9 @@ export default {
         border-radius: 0.5em
         height: 9vh
         width: 18vw
+
+    .imagen-estadio-expandida
+        width: 98vw
 
     .estadios-seleccionados
         border-radius: 0.5em
