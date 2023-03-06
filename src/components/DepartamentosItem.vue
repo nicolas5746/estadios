@@ -7,11 +7,17 @@ export default {
         },
         reinciarPagina() {
             window.location.reload();
-        }
+        },
     },
     props: {
-        departamentos: Array,
-        departamentoSeleccionado: String,
+        departamentos: {
+            type: Array,
+            default: () => Array,
+        },
+        departamentoSeleccionado: {
+            type: String,
+            default: () => String,
+        },
     },
 }
 </script>
@@ -19,9 +25,12 @@ export default {
 <template>
     <div class='select'>
         <label for='seleccionar-departamento'>{{ `Seleccionar departamento` }}</label>
-        <select id='seleccionar-departamento' v-model='departamentoSeleccionado' @change='seleccionPorDepartamento'>
+        <select id='seleccionar-departamento' :value='departamentoSeleccionado'
+            @input='$event => departamentoSeleccionado = $event.target.value' @change='seleccionPorDepartamento'>
             <option disabled value=''>{{ `Seleccionar...` }}</option>
-            <option v-for='departamento in departamentos'>{{ departamento }}</option>
+            <option v-for='departamento in departamentos'>
+                {{ departamento }}
+            </option>
         </select>
         <button type='button' @click='reinciarPagina'>{{ `Reiniciar` }}</button>
     </div>
