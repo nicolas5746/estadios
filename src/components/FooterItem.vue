@@ -43,6 +43,7 @@ footer
     height: 10%
     justify-content: center
     left: 0
+    line-height: 1.5rem
     position: fixed
     right: 0
     width: 100%

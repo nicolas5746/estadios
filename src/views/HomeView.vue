@@ -3,9 +3,16 @@ import { RouterLink, RouterView } from 'vue-router';
 export default {
   name: 'HomeView',
   data() {
+    const descripcion = `es un sitio web con información sobre los estadios de fútbol más importantes en los 19 departamentos del país.`;
+    const estadios = `ver estadios`;
     const football = `https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/football-01.png`
     const titulo = `Estadios del Uruguay`;
-    return { football, titulo, }
+    return {
+      descripcion,
+      estadios,
+      football,
+      titulo,
+    }
   }
 }
 </script>
@@ -15,10 +22,9 @@ export default {
     <div class='home-view'>
       <img :src='football' :alt='titulo' :title='titulo' />
       <h1>{{ titulo }}</h1>
-      <p>{{ `es un sitio web con información sobre los estadios de fútbol más importantes en los 19 departamentos del
-              país.` }}</p>
+      <p>{{ descripcion }}</p>
       <button>
-        <RouterLink to='/estadios' class='button'>{{ `ver estadios` }}</RouterLink>
+        <RouterLink to='/estadios' class='button'>{{ estadios }}</RouterLink>
       </button>
     </div>
     <RouterView />

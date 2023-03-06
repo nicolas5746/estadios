@@ -3,11 +3,9 @@ import { RouterLink, RouterView } from 'vue-router';
 export default {
     name: 'NavbarItem',
     data() {
-        const homeNavTitle = 'inicio';
-        const estadiosNavTitle = 'estadios';
-        return {
-            homeNavTitle, estadiosNavTitle,
-        }
+        const homeNavTitle = `inicio`;
+        const estadiosNavTitle = `estadios`;
+        return { homeNavTitle, estadiosNavTitle, }
     },
 }
 </script>

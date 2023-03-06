@@ -18,21 +18,33 @@ export default {
             type: String,
             default: () => String,
         },
+        reiniciarSeleccion: {
+            type: String,
+            default: () => `Reiniciar`,
+        },
+        seleccionar: {
+            type: String,
+            default: () => `Seleccionar...`,
+        },
+        seleccionarDepartamento: {
+            type: String,
+            default: () => `Seleccionar departamento`,
+        },
     },
 }
 </script>
 
 <template>
     <div class='select'>
-        <label for='seleccionar-departamento'>{{ `Seleccionar departamento` }}</label>
+        <label for='seleccionar-departamento'>{{ seleccionarDepartamento }}</label>
         <select id='seleccionar-departamento' :value='departamentoSeleccionado'
             @input='$event => departamentoSeleccionado = $event.target.value' @change='seleccionPorDepartamento'>
-            <option disabled value=''>{{ `Seleccionar...` }}</option>
+            <option disabled value=''>{{ seleccionar }}</option>
             <option v-for='departamento in departamentos'>
                 {{ departamento }}
             </option>
         </select>
-        <button type='button' @click='reinciarPagina'>{{ `Reiniciar` }}</button>
+        <button type='button' @click='reinciarPagina'>{{ reiniciarSeleccion }}</button>
     </div>
 </template>
 

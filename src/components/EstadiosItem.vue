@@ -56,8 +56,9 @@ export default {
 <template>
     <div class='estadios'>
         <div class='seleccionar-departamentos'>
-            <DepartamentosItem :departamentos='departamentos' :modelValue='departamentoSeleccionado'
-                @update:modelValue='$event => departamentoSeleccionado = $event' @seleccion='getDepartamentoSeleccionado' />
+            <DepartamentosItem :departamentos='departamentos' :departamentoSeleccionado='departamentoSeleccionado'
+                @update:departamentoSeleccionado='$event => departamentoSeleccionado = $event'
+                @seleccion='getDepartamentoSeleccionado' />
         </div>
         <div class='mapa' v-if='!departamentoSeleccionado'>
             <img :src='mapa' alt='Departamentos' title='Departamentos' />
