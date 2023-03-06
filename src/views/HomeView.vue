@@ -23,9 +23,11 @@ export default {
       <img :src='football' :alt='titulo' :title='titulo' />
       <h1>{{ titulo }}</h1>
       <p>{{ descripcion }}</p>
-      <button>
-        <RouterLink to='/estadios' class='button'>{{ estadios }}</RouterLink>
-      </button>
+      <RouterLink to='/estadios'>
+        <button class='button'>
+          {{ estadios }}
+        </button>
+      </RouterLink>
     </div>
     <RouterView />
   </main>
@@ -66,30 +68,31 @@ export default {
     font-family: fonts.$lato
     position: relative
     text-align: center
-  & button
-      background-color: transparent
-      border: 0.1em solid colours.$roman-silver
-      border-radius: 0.5em
-      display: block
-      font-family: fonts.$montserrat
-      font-size: 1rem
-      margin: 2% auto
-      padding: 0.5%
-      text-decoration: none
-      &:hover
-        background-color: colours.$transparent-dark-grey
-  .button
-      text-transform: uppercase
-      &:link
-        color: colours.$linen
-      &:visited
-        color: colours.$purple
-      &:hover
-        color: colours.$dark-orange
-        margin: 0
-      &:active
-        color: colours.$neon-orange
 
+.button
+  background-color: colours.$linen
+  border: 0.1em solid colours.$roman-silver
+  border-radius: 0.5em
+  color: colours.$dark-orange
+  cursor: pointer
+  display: block
+  font-family: fonts.$montserrat
+  font-size: 1rem
+  margin: 20% auto
+  padding: 5%
+  text-decoration: none
+  text-transform: uppercase
+  white-space: nowrap
+  &:link
+    color: colours.$dark-orange
+  &:visited
+    color: colours.$purple
+  &:hover
+    background-color: colours.$transparent-dark-grey
+    color: colours.$dark-orange
+  &:active
+    color: colours.$neon-orange
+     
 @media screen and (max-width: 599px)
   .home-view
     margin: 1% auto
@@ -97,8 +100,9 @@ export default {
       font-size: 1.3rem
     & p
       font-size: 0.8rem
-    & button
-      font-size: 0.6rem
+
+  .button
+    font-size: 0.6rem
 
 @media screen and (min-width: 600px) and (max-width: 1199px)
   .home-view
@@ -107,6 +111,7 @@ export default {
       font-size: 1.5rem
     & p
       font-size: 1rem
-    & button
-      font-size: 0.8rem
+
+  .button
+    font-size: 0.8rem
 </style>

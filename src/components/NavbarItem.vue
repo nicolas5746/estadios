@@ -3,8 +3,8 @@ import { RouterLink, RouterView } from 'vue-router';
 export default {
     name: 'NavbarItem',
     data() {
-        const homeNavTitle = `inicio`;
-        const estadiosNavTitle = `estadios`;
+        let homeNavTitle = `inicio`;
+        let estadiosNavTitle = `estadios`;
         return { homeNavTitle, estadiosNavTitle, }
     },
 }
@@ -37,16 +37,19 @@ nav
     text-align: center
     width: 100%  
     & a
-        background-color: transparent
+        background-color: colours.$linen
         border: 0.1em solid colours.$silver
         border-radius: 1em
+        color: colours.$dark-orange
         font-family: fonts.$lato
         font-size: 1rem
-        margin: 2%
-        padding: 0.5%
+        margin: 1%
+        padding: 0.8%
+        text-decoration: none
         text-transform: uppercase
+        white-space: nowrap
         &:link
-            color: colours.$linen
+            color: colours.$dark-orange
         &:visited
             color: colours.$purple
         &:hover

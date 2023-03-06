@@ -9,11 +9,11 @@ export default {
     methods: {
         async getData() {
             const response = await axios.get('https://raw.githubusercontent.com/nicolas5746/estadios/master/public/data/estadios.json');
-            this.departamentos = await response.data.departamentos;
-            this.estadios = await response.data.estadios;
+            this.departamentos = response.data.departamentos;
+            this.estadios = response.data.estadios;
         },
-        async getDepartamentoSeleccionado(departamento) {
-            this.departamentoSeleccionado = await departamento;
+        getDepartamentoSeleccionado(departamento) {
+            this.departamentoSeleccionado = departamento;
         },
         handleImagenExpandida(index) {
             return {
@@ -37,16 +37,18 @@ export default {
         await this.getData();
     },
     data() {
-        const departamentos = [];
-        const estadios = [];
-        const mapa = `https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/mapa.png`;
+        let departamentos = [];
         let departamentoSeleccionado = ``;
+        let estadios = [];
         let indice = null;
+        let info = `Más información`;
+        let mapa = `https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/mapa.png`;
         return {
             departamentos,
             departamentoSeleccionado,
             estadios,
             indice,
+            info,
             mapa,
         }
     },
@@ -57,8 +59,7 @@ export default {
     <div class='estadios'>
         <div class='seleccionar-departamentos'>
             <DepartamentosItem :departamentos='departamentos' :departamentoSeleccionado='departamentoSeleccionado'
-                @update:departamentoSeleccionado='$event => departamentoSeleccionado = $event'
-                @seleccion='getDepartamentoSeleccionado' />
+                @update:seleccion='getDepartamentoSeleccionado' />
         </div>
         <div class='mapa' v-if='!departamentoSeleccionado'>
             <img :src='mapa' alt='Departamentos' title='Departamentos' />
@@ -77,9 +78,9 @@ export default {
                         <p>Propietario: {{ estadio.propietario }}</p>
                         <p>Ciudad/Localidad: {{ estadio.localidad }}</p>
                         <p>Inauguración: {{ estadio.inauguracion }}</p>
-                        <button class='detalles' type='button'>
-                            <a :href='estadio.wikipedia' target='_blank'>{{ `Más información` }}</a>
-                        </button>
+                        <a :href='estadio.wikipedia' target='_blank'>
+                            <button class='detalles' type='button'>{{ info }}</button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -95,7 +96,7 @@ export default {
     align-items: flex-start
     display: flex
     justify-content: space-between
-    margin: 0 auto
+    margin: 1% auto
     padding: 0 5% 0 5%
     width: 100%
 
@@ -207,21 +208,22 @@ export default {
         text-align: left
 
 .detalles
-        background-color: colours.$transparent-dark-grey
-        border: 0.1em solid colours.$dark-white
-        border-radius: 0.5em
-        font-size: 0.9rem
-        padding: 0.5%
-        transform: translateY(20%)
-        & a
-            &:link
-                color: colours.$dark-white
-            &:visited
-                color: colours.$linen
-            &:hover
-                color: colours.$dark-orange
-            &:active
-                color: colours.$neon-orange
+    background-color: colours.$transparent-dark-grey
+    border: 0.1em solid colours.$dark-white
+    border-radius: 0.5em
+    color: colours.$dark-white
+    cursor: pointer
+    font-size: 0.9rem
+    padding: 0.5%
+    transform: translateY(20%)
+    &:link
+        color: colours.$dark-white
+    &:visited
+        color: colours.$linen
+    &:hover
+        color: colours.$dark-orange
+    &:active
+        color: colours.$neon-orange
 
 @media screen and (max-width: 320px)
     .imagen-estadio
@@ -246,7 +248,7 @@ export default {
         padding: 0.1% 3%
         & h1
             & span
-                font-size: 0.15rem
+                font-size: 0.13rem
         & p
             font-size: 0.15rem
 
@@ -269,7 +271,7 @@ export default {
         padding: 2% 1%
         & h1
             & span
-                font-size: 0.2rem
+                font-size: 0.17rem
         & p
             font-size: 0.3rem
 
@@ -288,11 +290,11 @@ export default {
         padding: 2% 0 35% 1%
 
     .info-estadios 
-        line-height: 0.55rem
+        line-height: 0.50rem
         padding: 5% 2%
         & h1
             & span
-                font-size: 0.4rem
+                font-size: 0.3rem
         & p
             font-size: 0.5rem
 
@@ -314,7 +316,7 @@ export default {
         line-height: 0.65rem
         & h1
             & span
-                font-size: 0.5rem
+                font-size: 0.45rem
         & p
             font-size: 0.6rem
 

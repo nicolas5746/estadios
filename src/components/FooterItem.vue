@@ -2,11 +2,11 @@
 export default {
     name: 'FooterItem',
     data() {
-        const copyright = 2022;
-        const football = `https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/football-02.png`
-        const nombreCompleto = `Nicolás Batista Piñeyro`;
-        const portfolio = `https://nicolasbatista.netlify.app/`;
-        const titulo = `Estadios del Uruguay`;
+        let copyright = 2022;
+        let football = `https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/football-02.png`
+        let nombreCompleto = `Nicolás Batista Piñeyro`;
+        let portfolio = `https://nicolasbatista.netlify.app/`;
+        let titulo = `Estadios del Uruguay`;
         return {
             copyright,
             football,

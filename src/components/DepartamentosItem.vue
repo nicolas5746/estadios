@@ -1,9 +1,10 @@
 <script>
 export default {
     name: 'DepartamentosItem',
+    emits: ['update:seleccion'],
     methods: {
         seleccionPorDepartamento() {
-            this.$emit('seleccion', this.departamentoSeleccionado);
+            this.$emit('update:seleccion', this.departamentoSeleccionado);
         },
         reinciarPagina() {
             window.location.reload();
@@ -38,7 +39,7 @@ export default {
     <div class='select'>
         <label for='seleccionar-departamento'>{{ seleccionarDepartamento }}</label>
         <select id='seleccionar-departamento' :value='departamentoSeleccionado'
-            @input='$event => departamentoSeleccionado = $event.target.value' @change='seleccionPorDepartamento'>
+            @input='event => departamentoSeleccionado = event.target.value' @change='seleccionPorDepartamento'>
             <option disabled value=''>{{ seleccionar }}</option>
             <option v-for='departamento in departamentos'>
                 {{ departamento }}
