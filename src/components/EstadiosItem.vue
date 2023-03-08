@@ -33,8 +33,8 @@ export default {
             }
         },
     },
-    async mounted() {
-        await this.getData();
+    mounted() {
+        this.getData();
     },
     data() {
         let departamentos = [];
@@ -59,7 +59,7 @@ export default {
     <div class='estadios'>
         <div class='seleccionar-departamentos'>
             <DepartamentosItem :departamentos='departamentos' :departamentoSeleccionado='departamentoSeleccionado'
-                @update:seleccion='getDepartamentoSeleccionado' />
+                @seleccion='getDepartamentoSeleccionado' />
         </div>
         <div class='mapa' v-if='!departamentoSeleccionado'>
             <img :src='mapa' alt='Departamentos' title='Departamentos' />
@@ -230,7 +230,7 @@ export default {
 @media screen and (max-width: 320px)
     .imagen-estadio
         border-radius: 0.5em
-        height: 12vh
+        height: 14vh
         width: 28vw
 
     .estadios-seleccionados
@@ -245,15 +245,15 @@ export default {
     .info-estadios 
         & h1,
         & p
-            font-size: 0.3rem
+            font-size: 0.35rem
 
     .detalles
-        font-size: 0.3rem
+        font-size: 0.35rem
 
 @media screen and (min-width: 321px) and (max-width: 480px)
     .imagen-estadio
         border-radius: 1em
-        height: 14vh
+        height: 16vh
         width: 30vw
 
     .estadios-seleccionados
@@ -265,15 +265,15 @@ export default {
     .info-estadios
         & h1,
         & p
-            font-size: 0.5rem
+            font-size: 0.45rem
 
     .detalles
-        font-size: 0.5rem
+        font-size: 0.45rem
 
 @media screen and (min-width: 481px) and (max-width: 850px)
     .imagen-estadio
         border-radius: 1.5em
-        height: 23vh
+        height: 21vh
         width: 33vw
 
     .estadios-seleccionados
@@ -281,6 +281,14 @@ export default {
 
     .estadios-grid
         padding: 2% 1% 50%
+
+    .info-estadios
+        & h1,
+        & p
+            font-size: 0.5rem
+
+    .detalles
+        font-size: 0.5rem
 
 @media screen and (min-width: 851px) and (max-width: 1199px)
     .imagen-estadio

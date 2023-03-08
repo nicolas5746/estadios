@@ -1,10 +1,9 @@
 <script>
 export default {
     name: 'DepartamentosItem',
-    emits: ['update:seleccion'],
     methods: {
         seleccionPorDepartamento() {
-            this.$emit('update:seleccion', this.departamentoSeleccionado);
+            this.$emit('seleccion', this.departamentoSeleccionado);
         },
         reinciarPagina() {
             window.location.reload();

@@ -3,10 +3,10 @@ import { RouterLink, RouterView } from 'vue-router';
 export default {
   name: 'HomeView',
   data() {
-    const descripcion = `es un sitio web con información sobre los estadios de fútbol más importantes en los 19 departamentos del país.`;
-    const estadios = `ver estadios`;
-    const football = `https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/football-01.png`
-    const titulo = `Estadios del Uruguay`;
+    let descripcion = `es un sitio web con información sobre los estadios de fútbol más importantes en los 19 departamentos del país.`;
+    let estadios = `ver estadios`;
+    let football = `https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/football-01.png`;
+    let titulo = `Estadios del Uruguay`;
     return {
       descripcion,
       estadios,
