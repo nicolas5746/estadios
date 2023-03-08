@@ -97,7 +97,7 @@ export default {
     display: flex
     justify-content: space-between
     margin: 1% auto
-    padding: 0 5% 0 5%
+    padding: 0 5%
     width: 100%
 
 .mapa
@@ -166,7 +166,7 @@ export default {
 
 .imagen-estadio-expandida
     cursor: grab
-    height: 100%
+    height: 75vh
     left: 50%
     margin-left: -50%
     margin-top: -50vh
@@ -174,7 +174,7 @@ export default {
     position: fixed
     top: 50%
     transition: 0.3s
-    width: 99vw
+    width: 90vw
     z-index: 2
 
 .estadios-seleccionados
@@ -230,7 +230,7 @@ export default {
 @media screen and (max-width: 320px)
     .imagen-estadio
         border-radius: 0.5em
-        height: 14vh
+        height: 16vh
         width: 28vw
 
     .estadios-seleccionados
@@ -253,7 +253,7 @@ export default {
 @media screen and (min-width: 321px) and (max-width: 480px)
     .imagen-estadio
         border-radius: 1em
-        height: 16vh
+        height: 18vh
         width: 30vw
 
     .estadios-seleccionados
@@ -273,7 +273,7 @@ export default {
 @media screen and (min-width: 481px) and (max-width: 850px)
     .imagen-estadio
         border-radius: 1.5em
-        height: 21vh
+        height: 23vh
         width: 33vw
 
     .estadios-seleccionados
@@ -290,26 +290,23 @@ export default {
     .detalles
         font-size: 0.5rem
 
-@media screen and (min-width: 851px) and (max-width: 1199px)
-    .imagen-estadio
-        border-radius: 1.5em
-
-    .imagen-estadio-expandida
-        height: 75vh
-
-    .estadios-grid
-        padding: 2% 1% 30%
-
 @media screen and (max-width: 850px)
     .imagen-estadio-expandida
         height: 60vh
+        width: 90vw
 
     .estadios-grid
         grid-gap: 5%
         grid-template-columns: 45% 45%
 
+@media screen and (min-width: 851px) and (max-width: 1199px)
+    .imagen-estadio
+        border-radius: 1.5em
+
+    .estadios-grid
+        padding: 2% 1% 30%
+
 @media screen and (max-width: 1200px)
     .imagen-estadio-expandida
         margin-top: -35vh
-        width: 98vw
 </style>
