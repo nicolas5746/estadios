@@ -240,7 +240,7 @@ export default {
         width: 35%
     
     .info-estadios 
-        line-height: 0.3rem
+        line-height: 0.23rem
         & h1
             font-size: 0.2rem
         & p
@@ -262,7 +262,7 @@ export default {
         padding: 5% 1% 50%
 
     .info-estadios
-        line-height: 0.4rem
+        line-height: 0.38rem
         & h1
             font-size: 0.25rem
         & p
@@ -274,17 +274,17 @@ export default {
 @media screen and (min-width: 481px) and (max-width: 850px)
     .imagen-estadio
         border-radius: 1.5em
-        height: 16vh
-        width: 32vw
+        height: 23vh
+        width: 33vw
 
     .estadios-seleccionados
         border-radius: 1.5em
 
     .estadios-grid
-        padding: 2% 1% 35%
+        padding: 2% 1% 50%
 
     .info-estadios 
-        line-height: 0.8rem
+        line-height: 0.58rem
         & h1
             font-size: 0.41rem
         & p
@@ -296,16 +296,15 @@ export default {
 @media screen and (min-width: 851px) and (max-width: 1199px)
     .imagen-estadio
         border-radius: 1.5em
-        height: 21vh
 
     .imagen-estadio-expandida
         height: 75vh
 
     .estadios-grid
-        padding: 2% 0 30% 1%
+        padding: 2% 1% 30%
 
     .info-estadios
-        line-height: 0.65rem
+        line-height: 0.58rem
         & h1
             font-size: 0.45rem
         & p
@@ -319,6 +318,7 @@ export default {
         height: 60vh
 
     .estadios-grid
+        grid-gap: 5%
         grid-template-columns: 45% 45%
 
 @media screen and (max-width: 1200px)
