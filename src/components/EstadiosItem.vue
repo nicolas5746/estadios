@@ -190,7 +190,7 @@ export default {
 
 .info-estadios
     height: 100%
-    line-height: 0.95rem
+    line-height: 0.9
     padding: 5% 4%
     position: absolute
     width: 100%
@@ -198,12 +198,16 @@ export default {
         font-family: fonts.$lato
         font-size: 0.8rem
         text-transform: uppercase
+        &:hover
+            color: colours.$dark-orange
     & p
         font-family: fonts.$roboto
         font-size: 0.9rem
     & h1,
     & p
         color: colours.$dark-white
+        margin: 0.5%
+        padding: 0.5%
         text-align: left
 
 .detalles
@@ -240,7 +244,6 @@ export default {
         width: 35%
     
     .info-estadios 
-        line-height: 0.23rem
         & h1
             font-size: 0.2rem
         & p
@@ -262,7 +265,6 @@ export default {
         padding: 5% 1% 50%
 
     .info-estadios
-        line-height: 0.38rem
         & h1
             font-size: 0.25rem
         & p
@@ -284,7 +286,6 @@ export default {
         padding: 2% 1% 50%
 
     .info-estadios 
-        line-height: 0.58rem
         & h1
             font-size: 0.41rem
         & p
@@ -304,7 +305,6 @@ export default {
         padding: 2% 1% 30%
 
     .info-estadios
-        line-height: 0.58rem
         & h1
             font-size: 0.45rem
         & p
