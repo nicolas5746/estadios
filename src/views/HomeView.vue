@@ -48,7 +48,7 @@ export default {
   flex-direction: column
   justify-content: center
   line-height: 2rem
-  margin: 5% auto
+  margin: 3% auto
   & img
     filter: brightness(1.2) saturate(1.1) contrast(0.85)
     position: relative
@@ -79,7 +79,7 @@ export default {
   display: block
   font-family: fonts.$montserrat
   font-size: 1rem
-  margin: 20% auto
+  margin: 5% auto
   padding: 5%
   text-decoration: none
   text-transform: uppercase

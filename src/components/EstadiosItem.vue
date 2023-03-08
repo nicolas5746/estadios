@@ -73,7 +73,7 @@ export default {
                 </div>
                 <div class='estadios-seleccionados'>
                     <div class='info-estadios'>
-                        <h1><span>{{ estadio.nombre }}</span></h1>
+                        <h1>{{ estadio.nombre }}</h1>
                         <p>Capacidad: {{ estadio.capacidad }}</p>
                         <p>Propietario: {{ estadio.propietario }}</p>
                         <p>Ciudad/Localidad: {{ estadio.localidad }}</p>
@@ -191,14 +191,13 @@ export default {
 .info-estadios
     height: 100%
     line-height: 0.95rem
-    padding: 6% 2%
+    padding: 5% 4%
     position: absolute
     width: 100%
     & h1
-        & span
-            font-family: fonts.$lato
-            font-size: 0.8rem
-            text-transform: uppercase
+        font-family: fonts.$lato
+        font-size: 0.8rem
+        text-transform: uppercase
     & p
         font-family: fonts.$roboto
         font-size: 0.9rem
@@ -228,86 +227,82 @@ export default {
 @media screen and (max-width: 320px)
     .imagen-estadio
         border-radius: 0.5em
-        height: 9vh
-        width: 18vw
-
-    .imagen-estadio-expandida
-        width: 98vw
+        height: 12vh
+        width: 28vw
 
     .estadios-seleccionados
         border-radius: 0.5em
 
     .estadios-grid
-        padding: 7.5% 0 30% 5%
+        grid-template-columns: 45% 45%
+        padding: 7.5% 1% 35%
 
     .seleccionar-departamentos
         width: 35%
     
     .info-estadios 
-        line-height: 0.2rem
-        padding: 0.1% 3%
+        line-height: 0.3rem
         & h1
-            & span
-                font-size: 0.13rem
+            font-size: 0.2rem
         & p
-            font-size: 0.15rem
+            font-size: 0.25rem
 
     .detalles
-        font-size: 0.15rem
+        font-size: 0.25rem
 
 @media screen and (min-width: 321px) and (max-width: 480px)
     .imagen-estadio
         border-radius: 1em
-        height: 10vh
+        height: 14vh
+        width: 30vw
 
     .estadios-seleccionados
         border-radius: 1em
 
     .estadios-grid
-        padding: 5% 0 50% 5%
+        grid-template-columns: 45% 45%
+        padding: 5% 1% 50%
 
     .info-estadios
-        line-height: 0.35rem
-        padding: 2% 1%
+        line-height: 0.4rem
         & h1
-            & span
-                font-size: 0.17rem
+            font-size: 0.25rem
         & p
-            font-size: 0.3rem
+            font-size: 0.4rem
 
     .detalles
-        font-size: 0.3rem
+        font-size: 0.4rem
 
-@media screen and (min-width: 481px) and (max-width: 991px)
+@media screen and (min-width: 481px) and (max-width: 850px)
     .imagen-estadio
         border-radius: 1.5em
-        height: 13vh
+        height: 16vh
+        width: 32vw
 
     .estadios-seleccionados
         border-radius: 1.5em
 
     .estadios-grid
-        padding: 2% 0 35% 1%
+        grid-template-columns: 45% 45%
+        padding: 2% 1% 35%
 
     .info-estadios 
-        line-height: 0.50rem
-        padding: 5% 2%
+        line-height: 0.8rem
         & h1
-            & span
-                font-size: 0.3rem
+            font-size: 0.41rem
         & p
-            font-size: 0.5rem
+            font-size: 0.6rem
 
     .detalles
-        font-size: 0.5rem
+        font-size: 0.6rem
 
-@media screen and (min-width: 992px) and (max-width: 1199px)
+@media screen and (min-width: 851px) and (max-width: 1199px)
     .imagen-estadio
         border-radius: 1.5em
         height: 21vh
 
     .imagen-estadio-expandida
-        height: 60vh
+        height: 75vh
 
     .estadios-grid
         padding: 2% 0 30% 1%
@@ -315,16 +310,19 @@ export default {
     .info-estadios
         line-height: 0.65rem
         & h1
-            & span
-                font-size: 0.45rem
+            font-size: 0.45rem
         & p
             font-size: 0.6rem
 
     .detalles
         font-size: 0.6rem
 
-@media screen and (max-width: 1200px)
+@media screen and (max-width: 991px)
     .imagen-estadio-expandida
         height: 60vh
+
+@media screen and (max-width: 1200px)
+    .imagen-estadio-expandida
         margin-top: -35vh
+        width: 98vw
 </style>
