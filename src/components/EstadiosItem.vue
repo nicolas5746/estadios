@@ -157,7 +157,7 @@ export default {
     bottom: 0
     height: 100%
     left: 0
-    opacity: 0.98
+    opacity: 0.985
     position: fixed
     right: 0
     top: 0
@@ -196,16 +196,15 @@ export default {
     width: 100%
     & h1
         font-family: fonts.$lato
-        font-size: 0.8rem
         text-transform: uppercase
         &:hover
             color: colours.$dark-orange
     & p
         font-family: fonts.$roboto
-        font-size: 0.9rem
     & h1,
     & p
         color: colours.$dark-white
+        font-size: 0.75rem
         margin: 0.5%
         padding: 0.5%
         text-align: left
@@ -216,7 +215,7 @@ export default {
     border-radius: 0.5em
     color: colours.$dark-white
     cursor: pointer
-    font-size: 0.9rem
+    font-size: 0.75rem
     padding: 0.5%
     transform: translateY(20%)
     &:link
@@ -244,13 +243,12 @@ export default {
         width: 35%
     
     .info-estadios 
-        & h1
-            font-size: 0.2rem
+        & h1,
         & p
-            font-size: 0.25rem
+            font-size: 0.3rem
 
     .detalles
-        font-size: 0.25rem
+        font-size: 0.3rem
 
 @media screen and (min-width: 321px) and (max-width: 480px)
     .imagen-estadio
@@ -265,13 +263,12 @@ export default {
         padding: 5% 1% 50%
 
     .info-estadios
-        & h1
-            font-size: 0.25rem
+        & h1,
         & p
-            font-size: 0.4rem
+            font-size: 0.5rem
 
     .detalles
-        font-size: 0.4rem
+        font-size: 0.5rem
 
 @media screen and (min-width: 481px) and (max-width: 850px)
     .imagen-estadio
@@ -285,15 +282,6 @@ export default {
     .estadios-grid
         padding: 2% 1% 50%
 
-    .info-estadios 
-        & h1
-            font-size: 0.41rem
-        & p
-            font-size: 0.6rem
-
-    .detalles
-        font-size: 0.6rem
-
 @media screen and (min-width: 851px) and (max-width: 1199px)
     .imagen-estadio
         border-radius: 1.5em
@@ -303,15 +291,6 @@ export default {
 
     .estadios-grid
         padding: 2% 1% 30%
-
-    .info-estadios
-        & h1
-            font-size: 0.45rem
-        & p
-            font-size: 0.6rem
-
-    .detalles
-        font-size: 0.6rem
 
 @media screen and (max-width: 850px)
     .imagen-estadio-expandida
