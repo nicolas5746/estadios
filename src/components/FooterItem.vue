@@ -40,7 +40,7 @@ footer
     background-color: colours.$transparent-grey
     bottom: 0
     display: flex
-    height: 10%
+    height: 12%
     justify-content: center
     left: 0
     line-height: 1.5rem
@@ -49,6 +49,7 @@ footer
     width: 100%
     & div
         line-height: 1.5rem
+        margin-bottom: 1%
         & h1
             font-family: fonts.$caveat
             font-size: 1.5rem

@@ -24,7 +24,7 @@ export default {
       <h1>{{ titulo }}</h1>
       <p>{{ descripcion }}</p>
       <RouterLink to='/estadios'>
-        <button class='button'>
+        <button class='toEstadios'>
           {{ estadios }}
         </button>
       </RouterLink>
@@ -58,18 +58,19 @@ export default {
     color: colours.$navy
     font-size: 2rem
     font-weight: 600
-    text-shadow: 0.07em 0.07em 0.07em colours.$night-blue
+    text-shadow: 0.06em 0.06em 0.06em colours.$night-blue
   & p
     color: colours.$blue
     font-size: 1.5rem
     font-weight: 400
+    padding: 2% 10%
   & h1,
   & p  
     font-family: fonts.$lato
     position: relative
     text-align: center
 
-.button
+.toEstadios
   background-color: colours.$linen
   border: 0.1em solid colours.$roman-silver
   border-radius: 0.5em
@@ -101,7 +102,7 @@ export default {
     & p
       font-size: 0.8rem
 
-  .button
+  .toEstadios
     font-size: 0.6rem
 
 @media screen and (min-width: 600px) and (max-width: 1199px)
@@ -112,6 +113,6 @@ export default {
     & p
       font-size: 1rem
 
-  .button
+  .toEstadios
     font-size: 0.8rem
 </style>

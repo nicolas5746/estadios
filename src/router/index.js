@@ -14,6 +14,11 @@ const router = createRouter({
       name: 'estadios',
       component: () => import('@/views/EstadiosView.vue'),
     },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'not-found',
+      component: () => import('@/views/NotFoundView.vue'),
+    },
   ]
 });
 
