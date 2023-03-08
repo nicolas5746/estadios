@@ -293,6 +293,7 @@ export default {
 @media screen and (max-width: 850px)
     .imagen-estadio-expandida
         height: 60vh
+        margin-top: -35vh
         width: 90vw
 
     .estadios-grid
@@ -305,8 +306,4 @@ export default {
 
     .estadios-grid
         padding: 2% 1% 30%
-
-@media screen and (max-width: 1200px)
-    .imagen-estadio-expandida
-        margin-top: -35vh
 </style>
