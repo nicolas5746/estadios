@@ -47,8 +47,11 @@ export default {
   display: flex
   flex-direction: column
   justify-content: center
-  line-height: 2rem
+  line-height: 1.2
   margin: 3% auto
+  overflow-y: auto
+  padding: 5% 5% 17%
+  position: relative
   & img
     filter: brightness(1.2) saturate(1.1) contrast(0.85)
     position: relative
@@ -104,6 +107,10 @@ export default {
 
   .toEstadios
     font-size: 0.6rem
+
+@media screen and (max-width: 850px)
+  .home-view
+    padding: 10% 5% 17%
 
 @media screen and (min-width: 600px) and (max-width: 1199px)
   .home-view
