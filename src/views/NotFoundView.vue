@@ -26,9 +26,9 @@ export default {
         font-family: fonts.$lato 
         font-size: 2.5rem
         font-weight: 800
-        left: 50%
+        left: 42.5%
         margin-left: -50%
-        margin-top: -15%
+        margin-top: -17.5%
         padding: 10%
         position: absolute
         text-align: center
