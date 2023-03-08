@@ -43,13 +43,10 @@ footer
     height: 12%
     justify-content: center
     left: 0
-    line-height: 1.5rem
     position: fixed
     right: 0
     width: 100%
     & div
-        line-height: 1.5rem
-        margin-bottom: 1%
         & h1
             font-family: fonts.$caveat
             font-size: 1.5rem
@@ -63,13 +60,14 @@ footer
         & h1,
         & p
             color: colours.$linen
+            margin: 0
+            padding: 0
             position: relative
             text-align: center
 
 @media screen and (max-width: 599px)
     footer
         & div
-            line-height: 1.1rem
             & h1
                 font-size: 1.1rem
             & p
@@ -78,7 +76,6 @@ footer
 @media screen and (min-width: 600px) and (max-width: 1199px)
     footer
         & div
-            line-height: 1.3rem
             & h1
                 font-size: 1.3rem
             & p

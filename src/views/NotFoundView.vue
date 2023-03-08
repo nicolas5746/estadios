@@ -29,7 +29,7 @@ export default {
         left: 42.5%
         margin-left: -50%
         margin-top: -17.5%
-        padding: 10%
+        padding: 7.5%
         position: absolute
         text-align: center
         text-shadow: 0.05em 0.05em 0.05em colours.$night-blue
