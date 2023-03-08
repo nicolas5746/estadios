@@ -174,7 +174,7 @@ export default {
     position: fixed
     top: 50%
     transition: 0.3s
-    width: 98vw
+    width: 99vw
     z-index: 2
 
 .estadios-seleccionados
@@ -234,7 +234,6 @@ export default {
         border-radius: 0.5em
 
     .estadios-grid
-        grid-template-columns: 45% 45%
         padding: 7.5% 1% 35%
 
     .seleccionar-departamentos
@@ -260,7 +259,6 @@ export default {
         border-radius: 1em
 
     .estadios-grid
-        grid-template-columns: 45% 45%
         padding: 5% 1% 50%
 
     .info-estadios
@@ -283,7 +281,6 @@ export default {
         border-radius: 1.5em
 
     .estadios-grid
-        grid-template-columns: 45% 45%
         padding: 2% 1% 35%
 
     .info-estadios 
@@ -317,9 +314,12 @@ export default {
     .detalles
         font-size: 0.6rem
 
-@media screen and (max-width: 991px)
+@media screen and (max-width: 850px)
     .imagen-estadio-expandida
         height: 60vh
+
+    .estadios-grid
+        grid-template-columns: 45% 45%
 
 @media screen and (max-width: 1200px)
     .imagen-estadio-expandida
