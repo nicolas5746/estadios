@@ -168,7 +168,7 @@ export default {
 
 .imagen-estadio-expandida
     cursor: grab
-    height: 85vh
+    height: 88vh
     left: 50%
     margin-left: -52%
     margin-top: -52vh
@@ -176,7 +176,7 @@ export default {
     position: fixed
     top: 48%
     transition: 0.3s
-    width: 95vw
+    width: 98vw
     z-index: 2
 
 .estadios-seleccionados
@@ -285,9 +285,9 @@ export default {
 
 @media screen and (max-width: 850px)
     .imagen-estadio-expandida
-        height: 60vh
+        height: 65vh
         margin-top: -35vh
-        width: 95vw
+        width: 98vw
 
     .estadios-grid
         grid-gap: 5%
