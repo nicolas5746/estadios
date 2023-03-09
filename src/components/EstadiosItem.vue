@@ -84,6 +84,7 @@ export default {
                     </div>
                 </div>
             </div>
+            <span></span>
         </div>
     </div>
 </template>
@@ -115,9 +116,11 @@ export default {
     grid-gap: 2%
     grid-template-columns: 30% 30% 30%
     overflow: auto
-    padding: 2% 0 15% 2%
+    padding: 2%
     position: relative
     width: 100%
+    & span
+        margin-bottom: 35vh
 
 .estadios-overlay
     align-items: center
@@ -126,8 +129,7 @@ export default {
     justify-content: center
     position: relative
     width: 100%
-    &:hover,
-    &:active
+    &:hover
         & .estadios-seleccionados
             transform: rotateX(0deg)
         & .imagen-estadio
@@ -136,13 +138,13 @@ export default {
             &:not(:hover)
                 filter: brightness(0.9) saturate(0) contrast(1.2) blur(0.3rem)
         & .imagen-estadio-expandida
-            border-radius: 0
+            box-shadow: none
             filter: brightness(1.2) saturate(1.1) contrast(1)
             opacity: 1
             &:not(:hover)
                 filter: brightness(1.2) saturate(1.1) contrast(1)
                 opacity: 1
-            
+
 .imagen-estadio
     border-radius: 2em
     filter: brightness(1.2) saturate(1.1) contrast(1)
@@ -236,19 +238,16 @@ export default {
     .estadios-seleccionados
         border-radius: 0.5em
 
-    .estadios-grid
-        padding: 7.5% 1% 35%
-
     .seleccionar-departamentos
         width: 35%
     
     .info-estadios 
         & h1,
         & p
-            font-size: 0.35rem
+            font-size: 0.15rem
 
     .detalles
-        font-size: 0.35rem
+        font-size: 0.15rem
 
 @media screen and (min-width: 321px) and (max-width: 480px)
     .imagen-estadio
@@ -258,9 +257,6 @@ export default {
 
     .estadios-seleccionados
         border-radius: 1em
-
-    .estadios-grid
-        padding: 5% 1% 50%
 
     .info-estadios
         & h1,
@@ -279,9 +275,6 @@ export default {
     .estadios-seleccionados
         border-radius: 1.5em
 
-    .estadios-grid
-        padding: 2% 1% 50%
-
     .info-estadios
         & h1,
         & p
@@ -293,10 +286,8 @@ export default {
 @media screen and (max-width: 850px)
     .imagen-estadio-expandida
         height: 60vh
-        margin-left: -55%
         margin-top: -35vh
-        padding: 10%
-        width: 90vw
+        width: 95vw
 
     .estadios-grid
         grid-gap: 5%
@@ -305,7 +296,4 @@ export default {
 @media screen and (min-width: 851px) and (max-width: 1199px)
     .imagen-estadio
         border-radius: 1.5em
-
-    .estadios-grid
-        padding: 2% 1% 30%
 </style>
