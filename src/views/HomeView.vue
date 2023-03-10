@@ -111,6 +111,9 @@ export default {
 @media screen and (max-width: 850px)
   .home-view
     padding: 10% 5% 17%
+    & img
+      height: 30%
+      width: 30%
 
 @media screen and (min-width: 600px) and (max-width: 1199px)
   .home-view
