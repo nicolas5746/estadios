@@ -172,7 +172,7 @@ export default {
     left: 50%
     margin-left: -52%
     margin-top: -52vh
-    padding: 5%
+    padding: 3%
     position: fixed
     top: 48%
     transition: 0.3s
@@ -287,7 +287,7 @@ export default {
     .imagen-estadio-expandida
         height: 60vh
         margin-top: -35vh
-        padding: 10%
+        padding: 8%
         width: 95vw
 
     .estadios-grid
