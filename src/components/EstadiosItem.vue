@@ -287,7 +287,7 @@ export default {
     .imagen-estadio-expandida
         height: 60vh
         margin-top: -35vh
-        padding: 1em 3em
+        padding: 1em 2em
         width: 95vw
 
     .estadios-grid
