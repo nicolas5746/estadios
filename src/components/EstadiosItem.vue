@@ -339,7 +339,7 @@ export default {
         width: 95vw
 
     .estadios-grid
-        grid-gap: 5%
+        grid-gap: 8%
         grid-template-columns: 45% 45%
         padding: 5% 12% 2%
 
