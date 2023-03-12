@@ -335,7 +335,7 @@ export default {
 @media screen and (max-width: 850px)
     .mapa
         & img
-            margin: 25% 45%
+            margin: 25% 60%
     .imagen-estadio-expandida
         height: 60vh
         margin: 15% 1% 2% 2%
