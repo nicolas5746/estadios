@@ -344,7 +344,7 @@ export default {
     .estadios-grid
         grid-gap: 8%
         grid-template-columns: 45% 45%
-        padding: 5% 12% 2%
+        padding: 5% 15% 2%
 
 @media screen and (min-width: 851px) and (max-width: 1199px)
     .imagen-estadio
