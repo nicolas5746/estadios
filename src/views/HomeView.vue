@@ -23,13 +23,7 @@ export default {
       <img :src='football' :alt='titulo' :title='titulo' />
       <h1>{{ titulo }}</h1>
       <p>{{ descripcion }}</p>
-      <RouterLink to='/estadios'>
-        <button class='toEstadios'>
-          {{ estadios }}
-        </button>
-      </RouterLink>
     </div>
-    <RouterView />
   </main>
 </template>
 
@@ -72,30 +66,6 @@ export default {
     font-family: fonts.$lato
     position: relative
     text-align: center
-
-.toEstadios
-  background-color: colours.$linen
-  border: 0.1em solid colours.$roman-silver
-  border-radius: 0.5em
-  color: colours.$dark-orange
-  cursor: pointer
-  display: block
-  font-family: fonts.$montserrat
-  font-size: 1rem
-  margin: 5% auto
-  padding: 5%
-  text-decoration: none
-  text-transform: uppercase
-  white-space: nowrap
-  &:link
-    color: colours.$dark-orange
-  &:visited
-    color: colours.$purple
-  &:hover
-    background-color: colours.$transparent-dark-grey
-    color: colours.$dark-orange
-  &:active
-    color: colours.$neon-orange
      
 @media screen and (max-width: 599px)
   .home-view
@@ -105,16 +75,6 @@ export default {
     & p
       font-size: 0.8rem
 
-  .toEstadios
-    font-size: 0.6rem
-
-@media screen and (max-width: 850px)
-  .home-view
-    padding: 10% 5% 17%
-    & img
-      height: 30%
-      width: 30%
-
 @media screen and (min-width: 600px) and (max-width: 1199px)
   .home-view
     margin: 2% auto
@@ -123,6 +83,10 @@ export default {
     & p
       font-size: 1rem
 
-  .toEstadios
-    font-size: 0.8rem
+@media screen and (max-width: 850px)
+  .home-view
+    padding: 10% 5% 17%
+    & img
+      height: 30%
+      width: 30%
 </style>

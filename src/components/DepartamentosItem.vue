@@ -54,7 +54,7 @@ export default {
 
 #seleccionar-departamento
         font-size: 0.9rem
-        margin: 2% auto
+        margin: 1% auto
 
 .select
     align-items: center
@@ -63,11 +63,14 @@ export default {
     flex-direction: column
     font-family: fonts.$roboto
     justify-content: center
-    margin-top: 25%
+    left: 15%
+    margin-left: -55%
+    margin-top: 10%
+    position: fixed
+    top: 15%
     width: 100%
     label
         font-size: 1rem
-        margin: 3% auto
         text-align: center
     button
         background-color: transparent
@@ -77,8 +80,6 @@ export default {
         display: block
         font-family: fonts.$montserrat
         font-size: 0.8rem
-        margin: 1%
-        padding: 0.5%
         text-decoration: none
         width: 60%
         &:link
@@ -89,6 +90,12 @@ export default {
             color: colours.$dark-orange
         &:active
             color: colours.$neon-orange
+    label,
+    button
+        margin: 0
+        padding: 0
+    
+
 
 @media screen and (max-width: 599px)
     #seleccionar-departamento

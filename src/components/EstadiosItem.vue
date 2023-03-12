@@ -15,6 +15,11 @@ export default {
         getDepartamentoSeleccionado(departamento) {
             this.departamentoSeleccionado = departamento;
         },
+        handleCerrarOverlay(index) {
+            return {
+                'cerrar-imagen-expandida': this.indice === index,
+            }
+        },
         handleImagenExpandida(index) {
             return {
                 'imagen-estadio-expandida': this.indice === index,
@@ -32,6 +37,14 @@ export default {
                 this.indice = index;
             }
         },
+        handleContraerImagen(index) {
+            this.handleIndice(index);
+            this.expandir = false;
+        },
+        handleExpandirImagen(index) {
+            this.handleIndice(index);
+            this.expandir = true;
+        },
     },
     mounted() {
         this.getData();
@@ -40,6 +53,7 @@ export default {
         let departamentos = [];
         let departamentoSeleccionado = ``;
         let estadios = [];
+        let expandir = false;
         let indice = null;
         let info = `Más información`;
         let mapa = `https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/mapa.png`;
@@ -47,6 +61,7 @@ export default {
             departamentos,
             departamentoSeleccionado,
             estadios,
+            expandir,
             indice,
             info,
             mapa,
@@ -66,10 +81,13 @@ export default {
         </div>
         <div class='estadios-grid'>
             <div class='estadios-overlay' v-for='(estadio, index) in estadios' :key='estadio'
-                v-show='estadio.departamento === departamentoSeleccionado' @click='() => handleIndice(index)'>
+                v-show='estadio.departamento === departamentoSeleccionado'>
                 <div :class='handleImagenOverlay(index)'>
                     <img class='imagen-estadio' :class='handleImagenExpandida(index)' :src='estadio.imagen'
                         :alt='estadio.nombre' :title='estadio.nombre' />
+                    <div :class='handleCerrarOverlay(index)' v-show='expandir' title='Cerrar'
+                        @click='() => handleContraerImagen(index)'>
+                    </div>
                 </div>
                 <div class='estadios-seleccionados'>
                     <div class='info-estadios'>
@@ -81,6 +99,8 @@ export default {
                         <a :href='estadio.wikipedia' target='_blank'>
                             <button class='detalles' type='button'>{{ info }}</button>
                         </a>
+                        <img v-if='expandir === false' src='images/expandir.png' alt='Expandir' title='Expandir'
+                            @click='() => handleExpandirImagen(index)' />
                     </div>
                 </div>
             </div>
@@ -100,6 +120,7 @@ export default {
     margin: 1% auto
     padding: 0 5%
     width: 100%
+    z-index: 1
 
 .mapa
     & img
@@ -116,7 +137,7 @@ export default {
     grid-gap: 2%
     grid-template-columns: 30% 30% 30%
     overflow: auto
-    padding: 2%
+    padding: 5% 2% 2%
     position: relative
     width: 100%
     & span
@@ -124,12 +145,12 @@ export default {
 
 .estadios-overlay
     align-items: center
-    cursor: pointer
     display: flex
     justify-content: center
     position: relative
     width: 100%
-    &:hover
+    &:hover,
+    &:active
         & .estadios-seleccionados
             transform: rotateX(0deg)
         & .imagen-estadio
@@ -143,16 +164,7 @@ export default {
             opacity: 1
             &:not(:hover)
                 filter: brightness(1.2) saturate(1.1) contrast(1)
-                opacity: 1
-
-.imagen-estadio
-    border-radius: 2em
-    filter: brightness(1.2) saturate(1.1) contrast(1)
-    height: 30vh
-    position: relative
-    transition: 0.3s
-    width: 21vw
-    z-index: -1
+                opacity: 1            
 
 .imagen-estadio-overlay
     background-color: colours.$squid-ink
@@ -166,17 +178,41 @@ export default {
     width: 100%
     z-index: 1
 
-.imagen-estadio-expandida
-    cursor: grab
-    height: 100vh
-    left: 50%
-    margin-left: -52%
-    margin-top: -52vh
-    padding: 3em 5em 5em 3em
-    position: fixed
-    top: 48%
+.imagen-estadio
+    border-radius: 2em
+    filter: brightness(1.2) saturate(1.1) contrast(1)
+    height: 30vh
+    position: relative
     transition: 0.3s
-    width: 100vw
+    width: 21vw
+    z-index: -1
+
+.cerrar-imagen-expandida
+    background-color: transparent
+    filter: invert(100%) sepia(2) saturate(100%) brightness(100%) contrast(50%)
+    height: 5%
+    width: 5%
+    &:after
+        bottom: 0
+        content: '\274c'
+        font-size: 0.8rem
+        left: 10%
+        line-height: 3
+        position: absolute
+        text-align: center
+        top: 0
+        z-index: 5
+    &:hover,
+    &:active
+        cursor: pointer
+        filter: invert(100%) sepia(0.1) saturate(100%) brightness(100%) contrast(100%)
+
+.imagen-estadio-expandida
+    height: 90vh
+    margin: 2% 1% 2% 2%
+    position: fixed
+    transition: 0.3s
+    width: 95vw
     z-index: 2
 
 .estadios-seleccionados
@@ -196,6 +232,16 @@ export default {
     padding: 5% 4%
     position: absolute
     width: 100%
+    & img
+        bottom: 20%
+        filter: invert(100%) sepia(100%) saturate(100%) brightness(100%) contrast(75%)
+        height: 6%
+        position: absolute
+        right: 15%
+        width: 6%
+        &:hover
+          cursor: pointer
+          transform: scale(1.2)
     & h1
         font-family: fonts.$lato
         text-transform: uppercase
@@ -286,8 +332,7 @@ export default {
 @media screen and (max-width: 850px)
     .imagen-estadio-expandida
         height: 60vh
-        margin-top: -35vh
-        padding: 1em 2em 1em 1em
+        margin: 15% 1% 2% 2%
         width: 95vw
 
     .estadios-grid
