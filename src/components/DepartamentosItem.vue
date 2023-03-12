@@ -63,12 +63,13 @@ export default {
     flex-direction: column
     font-family: fonts.$roboto
     justify-content: center
-    left: 15%
+    left: 20%
     margin-left: -55%
     margin-top: 10%
     position: fixed
     top: 15%
     width: 100%
+    
     label
         font-size: 1rem
         text-align: center
@@ -94,8 +95,6 @@ export default {
     button
         margin: 0
         padding: 0
-    
-
 
 @media screen and (max-width: 599px)
     #seleccionar-departamento

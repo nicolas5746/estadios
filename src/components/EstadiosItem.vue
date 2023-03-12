@@ -126,9 +126,10 @@ export default {
 
 .mapa
     & img
+        display: block
         filter: grayscale(100%)
         height: 100%
-        margin: 10%
+        margin: 25% 35%
         width: 100%
 
 .seleccionar-departamentos
@@ -340,6 +341,7 @@ export default {
     .estadios-grid
         grid-gap: 5%
         grid-template-columns: 45% 45%
+        padding: 5% 5% 2%
 
 @media screen and (min-width: 851px) and (max-width: 1199px)
     .imagen-estadio
