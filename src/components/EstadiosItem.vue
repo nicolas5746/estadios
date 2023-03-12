@@ -54,6 +54,7 @@ export default {
         let departamentoSeleccionado = ``;
         let estadios = [];
         let expandir = false;
+        let expandirIcon = `https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/expandir.png`;
         let indice = null;
         let info = `Más información`;
         let mapa = `https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/mapa.png`;
@@ -62,6 +63,7 @@ export default {
             departamentoSeleccionado,
             estadios,
             expandir,
+            expandirIcon,
             indice,
             info,
             mapa,
@@ -99,7 +101,7 @@ export default {
                         <a :href='estadio.wikipedia' target='_blank'>
                             <button class='detalles' type='button'>{{ info }}</button>
                         </a>
-                        <img v-if='expandir === false' src='images/expandir.png' alt='Expandir' title='Expandir'
+                        <img v-if='expandir === false' :src='expandirIcon' alt='Expandir' title='Expandir'
                             @click='() => handleExpandirImagen(index)' />
                     </div>
                 </div>
