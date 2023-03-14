@@ -58,6 +58,7 @@ export default {
         let indice = null;
         let info = `Más información`;
         let mapa = `https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/mapa.png`;
+        let sinImagen = `https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/no-picture.jpg`;
         return {
             departamentos,
             departamentoSeleccionado,
@@ -67,6 +68,7 @@ export default {
             indice,
             info,
             mapa,
+            sinImagen,
         }
     },
 }
@@ -84,8 +86,10 @@ export default {
         <div class='estadios-grid'>
             <div class='estadios-overlay' v-for='(estadio, index) in estadios' :key='estadio'
                 v-show='estadio.departamento === departamentoSeleccionado'>
+                <img class='imagen-estadio' v-if='estadio.imagen === null' :src='sinImagen' :alt='estadio.nombre'
+                    :title='estadio.nombre' />
                 <div :class='handleImagenOverlay(index)'>
-                    <img class='imagen-estadio' :class='handleImagenExpandida(index)' :src='estadio.imagen'
+                    <img class='imagen-estadio' v-if='estadio.imagen != null' :class='handleImagenExpandida(index)' :src='estadio.imagen'
                         :alt='estadio.nombre' :title='estadio.nombre' />
                     <div :class='handleCerrarOverlay(index)' v-show='expandir' title='Cerrar'
                         @click='() => handleContraerImagen(index)'>
@@ -101,8 +105,8 @@ export default {
                         <a :href='estadio.wikipedia' target='_blank'>
                             <button class='detalles' type='button'>{{ info }}</button>
                         </a>
-                        <img v-if='expandir === false' :src='expandirIcon' alt='Expandir' title='Expandir'
-                            @click='() => handleExpandirImagen(index)' />
+                        <img v-if='expandir === false && estadio.imagen != null' :src='expandirIcon' alt='Expandir'
+                            title='Expandir' @click='() => handleExpandirImagen(index)' />
                     </div>
                 </div>
             </div>
@@ -257,8 +261,9 @@ export default {
         color: colours.$dark-white
         font-size: 0.75rem
         margin: 0.5%
-        padding: 0.5%
+        padding: 0.2%
         text-align: left
+        white-space: normal
 
 .detalles
     background-color: colours.$transparent-dark-grey
@@ -280,8 +285,7 @@ export default {
 
 @media screen and (max-width: 320px)
     .estadios-overlay
-        height: 15vh
-        width: 25vw
+        height: 13vh
 
     .imagen-estadio
         border-radius: 0.5em
@@ -304,8 +308,7 @@ export default {
 
 @media screen and (min-width: 321px) and (max-width: 480px)
     .estadios-overlay
-        height: 16vh
-        width: 27vw
+        height: 14vh
 
     .imagen-estadio
         border-radius: 1em
@@ -325,8 +328,7 @@ export default {
 
 @media screen and (min-width: 481px) and (max-width: 850px)
     .estadios-overlay
-        height: 25vh
-        width: 29vw
+        height: 23vh
 
     .imagen-estadio
         border-radius: 1.5em
