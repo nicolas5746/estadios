@@ -50,6 +50,7 @@ export default {
     text-align: center
     text-shadow: 0.05em 0.05em 0.05em colours.$night-blue
     text-transform: uppercase
+    white-space: normal
 
 @media screen and (max-width: 850px)
   .not-found

@@ -1,5 +1,4 @@
 <script>
-import { RouterLink, RouterView } from 'vue-router';
 export default {
   name: 'HomeView',
   data() {
@@ -61,6 +60,7 @@ export default {
     font-size: 1.5rem
     font-weight: 400
     padding: 2% 10%
+    white-space: normal
   & h1,
   & p  
     font-family: fonts.$lato

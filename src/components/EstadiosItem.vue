@@ -8,7 +8,7 @@ export default {
     },
     methods: {
         async getData() {
-            const response = await axios.get('https://raw.githubusercontent.com/nicolas5746/estadios/master/public/data/estadios.json');
+            const response = await axios.get('https://raw.githubusercontent.com/nicolas5746/estadios/master/public/data/data.json');
             this.departamentos = response.data.departamentos;
             this.estadios = response.data.estadios;
         },
@@ -31,11 +31,11 @@ export default {
             }
         },
         handleIndice(index) {
-            if (this.indice === index) {
-                this.indice = null;
-            } else {
+            (this.indice === index)
+                ?
+                this.indice = null
+                :
                 this.indice = index;
-            }
         },
         handleContraerImagen(index) {
             this.handleIndice(index);
