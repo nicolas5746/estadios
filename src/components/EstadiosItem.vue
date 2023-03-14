@@ -163,11 +163,9 @@ export default {
                 filter: brightness(0.9) saturate(0) contrast(1.2) blur(0.3rem)
         & .imagen-estadio-expandida
             box-shadow: none
-            filter: brightness(1.2) saturate(1.1) contrast(1)
             opacity: 1
             &:not(:hover)
-                filter: brightness(1.2) saturate(1.1) contrast(1)
-                opacity: 1            
+                filter: brightness(1.2) saturate(1.1) contrast(1)            
 
 .imagen-estadio-overlay
     background-color: colours.$squid-ink
@@ -192,19 +190,19 @@ export default {
 
 .cerrar-imagen-expandida
     background-color: transparent
-    filter: invert(100%) sepia(2) saturate(100%) brightness(100%) contrast(50%)
     height: 5%
+    position: absolute
     width: 5%
+    z-index: 2
     &:after
         bottom: 0
         content: '\274c'
         font-size: 0.8rem
         left: 10%
-        line-height: 3
         position: absolute
         text-align: center
-        top: 0
-        z-index: 5
+        top: 20%
+        z-index: 2
     &:hover,
     &:active
         cursor: pointer
@@ -241,6 +239,7 @@ export default {
         height: 6%
         position: absolute
         right: 15%
+        transition: 0.6s
         width: 6%
         &:hover
           cursor: pointer
@@ -282,7 +281,7 @@ export default {
     .imagen-estadio
         border-radius: 0.5em
         height: 16vh
-        width: 28vw
+        width: 21vw
 
     .estadios-seleccionados
         border-radius: 0.5em
@@ -302,7 +301,7 @@ export default {
     .imagen-estadio
         border-radius: 1em
         height: 18vh
-        width: 30vw
+        width: 25vw
 
     .estadios-seleccionados
         border-radius: 1em
@@ -319,7 +318,7 @@ export default {
     .imagen-estadio
         border-radius: 1.5em
         height: 23vh
-        width: 33vw
+        width: 25vw
 
     .estadios-seleccionados
         border-radius: 1.5em
@@ -336,6 +335,7 @@ export default {
     .mapa
         & img
             margin: 25% 60%
+
     .imagen-estadio-expandida
         height: 60vh
         margin: 15% 1% 2% 2%

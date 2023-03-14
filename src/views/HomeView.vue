@@ -49,8 +49,8 @@ export default {
   & img
     filter: brightness(1.2) saturate(1.1) contrast(0.85)
     position: relative
-    height: 20%
-    width: 20%
+    height: 28vh
+    width: 20vw
   & h1
     color: colours.$navy
     font-size: 2rem
