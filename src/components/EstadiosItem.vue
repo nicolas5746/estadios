@@ -149,6 +149,7 @@ export default {
 .estadios-overlay
     align-items: center
     display: flex
+    height: 100%
     justify-content: center
     position: relative
     width: 100%
@@ -278,6 +279,10 @@ export default {
         color: colours.$neon-orange
 
 @media screen and (max-width: 320px)
+    .estadios-overlay
+        height: 15vh
+        width: 25vw
+
     .imagen-estadio
         border-radius: 0.5em
         height: 11vh
@@ -298,6 +303,10 @@ export default {
         font-size: 0.15rem
 
 @media screen and (min-width: 321px) and (max-width: 480px)
+    .estadios-overlay
+        height: 16vh
+        width: 27vw
+
     .imagen-estadio
         border-radius: 1em
         height: 12vh
@@ -315,6 +324,10 @@ export default {
         font-size: 0.45rem
 
 @media screen and (min-width: 481px) and (max-width: 850px)
+    .estadios-overlay
+        height: 25vh
+        width: 29vw
+
     .imagen-estadio
         border-radius: 1.5em
         height: 21vh
