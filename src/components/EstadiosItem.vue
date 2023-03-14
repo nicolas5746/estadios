@@ -55,6 +55,7 @@ export default {
         let estadios = [];
         let expandir = false;
         let expandirIcon = `https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/expandir.png`;
+        let expandirOnHover = `Expandir`;
         let indice = null;
         let info = `Más información`;
         let mapa = `https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/mapa.png`;
@@ -65,6 +66,7 @@ export default {
             estadios,
             expandir,
             expandirIcon,
+            expandirOnHover,
             indice,
             info,
             mapa,
@@ -89,8 +91,8 @@ export default {
                 <img class='imagen-estadio' v-if='estadio.imagen === null' :src='sinImagen' :alt='estadio.nombre'
                     :title='estadio.nombre' />
                 <div :class='handleImagenOverlay(index)'>
-                    <img class='imagen-estadio' v-if='estadio.imagen != null' :class='handleImagenExpandida(index)' :src='estadio.imagen'
-                        :alt='estadio.nombre' :title='estadio.nombre' />
+                    <img class='imagen-estadio' v-if='estadio.imagen != null' :class='handleImagenExpandida(index)'
+                        :src='estadio.imagen' :alt='estadio.nombre' :title='estadio.nombre' />
                     <div :class='handleCerrarOverlay(index)' v-show='expandir' title='Cerrar'
                         @click='() => handleContraerImagen(index)'>
                     </div>
@@ -105,8 +107,8 @@ export default {
                         <a :href='estadio.wikipedia' target='_blank'>
                             <button class='detalles' type='button'>{{ info }}</button>
                         </a>
-                        <img v-if='expandir === false && estadio.imagen != null' :src='expandirIcon' alt='Expandir'
-                            title='Expandir' @click='() => handleExpandirImagen(index)' />
+                        <img v-if='expandir === false && estadio.imagen != null' :src='expandirIcon' :alt='expandirOnHover'
+                            :title='expandirOnHover' @click='() => handleExpandirImagen(index)' />
                     </div>
                 </div>
             </div>
