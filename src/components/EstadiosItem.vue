@@ -140,7 +140,7 @@ export default {
     grid-gap: 2%
     grid-template-columns: 30% 30% 30%
     overflow: auto
-    padding: 5% 2% 2%
+    padding: 5% 1% 2% 5%
     position: relative
     width: 100%
     & span
@@ -281,7 +281,7 @@ export default {
     .imagen-estadio
         border-radius: 0.5em
         height: 16vh
-        width: 18vw
+        width: 21vw
 
     .estadios-seleccionados
         border-radius: 0.5em
@@ -301,7 +301,7 @@ export default {
     .imagen-estadio
         border-radius: 1em
         height: 18vh
-        width: 20vw
+        width: 23vw
 
     .estadios-seleccionados
         border-radius: 1em
@@ -318,7 +318,7 @@ export default {
     .imagen-estadio
         border-radius: 1.5em
         height: 23vh
-        width: 21vw
+        width: 25vw
 
     .estadios-seleccionados
         border-radius: 1.5em
@@ -344,7 +344,7 @@ export default {
     .estadios-grid
         grid-gap: 8%
         grid-template-columns: 45% 45%
-        padding: 5% 15% 2%
+        padding: 5% 5% 2% 10%
 
 @media screen and (min-width: 851px) and (max-width: 1199px)
     .imagen-estadio
