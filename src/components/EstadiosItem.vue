@@ -281,7 +281,7 @@ export default {
     .imagen-estadio
         border-radius: 0.5em
         height: 16vh
-        width: 21vw
+        width: 18vw
 
     .estadios-seleccionados
         border-radius: 0.5em
@@ -301,7 +301,7 @@ export default {
     .imagen-estadio
         border-radius: 1em
         height: 18vh
-        width: 25vw
+        width: 20vw
 
     .estadios-seleccionados
         border-radius: 1em
@@ -318,7 +318,7 @@ export default {
     .imagen-estadio
         border-radius: 1.5em
         height: 23vh
-        width: 25vw
+        width: 21vw
 
     .estadios-seleccionados
         border-radius: 1.5em
