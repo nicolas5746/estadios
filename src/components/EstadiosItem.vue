@@ -280,7 +280,7 @@ export default {
 @media screen and (max-width: 320px)
     .imagen-estadio
         border-radius: 0.5em
-        height: 16vh
+        height: 11vh
         width: 21vw
 
     .estadios-seleccionados
@@ -300,7 +300,7 @@ export default {
 @media screen and (min-width: 321px) and (max-width: 480px)
     .imagen-estadio
         border-radius: 1em
-        height: 18vh
+        height: 12vh
         width: 23vw
 
     .estadios-seleccionados
@@ -317,7 +317,7 @@ export default {
 @media screen and (min-width: 481px) and (max-width: 850px)
     .imagen-estadio
         border-radius: 1.5em
-        height: 23vh
+        height: 21vh
         width: 25vw
 
     .estadios-seleccionados
