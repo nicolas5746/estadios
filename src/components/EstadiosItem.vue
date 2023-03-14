@@ -54,23 +54,26 @@ export default {
         let departamentoSeleccionado = ``;
         let estadios = [];
         let expandir = false;
-        let expandirIcon = `https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/expandir.png`;
-        let expandirOnHover = `Expandir`;
         let indice = null;
-        let info = `Más información`;
-        let mapa = `https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/mapa.png`;
-        let sinImagen = `https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/no-picture.jpg`;
+        let links = [
+            `https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/expandir.png`,
+            `https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/mapa.png`,
+            `https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/no-picture.jpg`,
+        ];
+        let titulos = [
+            `Cerrar`,
+            `Departamentos`,
+            `Expandir`,
+            `Más información`,
+        ];
         return {
             departamentos,
             departamentoSeleccionado,
             estadios,
             expandir,
-            expandirIcon,
-            expandirOnHover,
             indice,
-            info,
-            mapa,
-            sinImagen,
+            links,
+            titulos,
         }
     },
 }
@@ -83,17 +86,17 @@ export default {
                 @seleccion='getDepartamentoSeleccionado' />
         </div>
         <div class='mapa' v-if='!departamentoSeleccionado'>
-            <img :src='mapa' alt='Departamentos' title='Departamentos' />
+            <img :src='links[1]' :alt='titulos[1]' :title='titulos[1]' />
         </div>
         <div class='estadios-grid'>
             <div class='estadios-overlay' v-for='(estadio, index) in estadios' :key='estadio'
                 v-show='estadio.departamento === departamentoSeleccionado'>
-                <img class='imagen-estadio' v-if='estadio.imagen === null' :src='sinImagen' :alt='estadio.nombre'
+                <img class='imagen-estadio' v-if='estadio.imagen === null' :src='links[2]' :alt='estadio.nombre'
                     :title='estadio.nombre' />
                 <div :class='handleImagenOverlay(index)'>
                     <img class='imagen-estadio' v-if='estadio.imagen != null' :class='handleImagenExpandida(index)'
                         :src='estadio.imagen' :alt='estadio.nombre' :title='estadio.nombre' />
-                    <div :class='handleCerrarOverlay(index)' v-show='expandir' title='Cerrar'
+                    <div :class='handleCerrarOverlay(index)' v-show='expandir' :title='titulos[1]'
                         @click='() => handleContraerImagen(index)'>
                     </div>
                 </div>
@@ -105,10 +108,10 @@ export default {
                         <p>Ciudad/Localidad: {{ estadio.localidad }}</p>
                         <p>Inauguración: {{ estadio.inauguracion }}</p>
                         <a :href='estadio.wikipedia' target='_blank'>
-                            <button class='detalles' type='button'>{{ info }}</button>
+                            <button class='detalles' type='button'>{{ titulos[3] }}</button>
                         </a>
-                        <img v-if='expandir === false && estadio.imagen != null' :src='expandirIcon' :alt='expandirOnHover'
-                            :title='expandirOnHover' @click='() => handleExpandirImagen(index)' />
+                        <img v-if='expandir === false && estadio.imagen != null' :src='links[0]' :alt='titulos[2]'
+                            :title='titulos[2]' @click='() => handleExpandirImagen(index)' />
                     </div>
                 </div>
             </div>
