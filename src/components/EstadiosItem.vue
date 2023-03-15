@@ -146,7 +146,7 @@ export default {
 
 .estadios-grid
     display: grid
-    grid-gap: 2%
+    grid-gap: 3%
     grid-template-columns: 30% 30% 30%
     overflow: auto
     padding: 5% 1% 2% 5%
@@ -199,7 +199,6 @@ export default {
     z-index: -1
 
 .cerrar-imagen-expandida
-    background-color: transparent
     height: 5%
     position: absolute
     width: 5%
@@ -239,7 +238,6 @@ export default {
 
 .info-estadios
     height: 100%
-    line-height: 0.9
     padding: 5% 4%
     position: absolute
     width: 100%
@@ -265,8 +263,10 @@ export default {
     & p
         color: colours.$dark-white
         font-size: 0.75rem
+        line-height: 0.9
         margin: 0.5%
-        padding: 0.2%
+        padding: 1.2%
+        position: relative
         text-align: left
         white-space: normal
 
@@ -365,7 +365,6 @@ export default {
         width: 95vw
 
     .estadios-grid
-        grid-gap: 8% 0
         grid-template-columns: 45% 45%
         padding: 5% 5% 2% 10%
 
