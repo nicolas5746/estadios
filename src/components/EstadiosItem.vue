@@ -291,7 +291,7 @@ export default {
 @media screen and (max-width: 320px)
     .estadios-overlay
         height: 13vh
-        width: 25vw
+        width: 24vw
 
     .imagen-estadio
         border-radius: 0.5em
