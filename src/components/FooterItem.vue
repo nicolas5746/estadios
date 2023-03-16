@@ -2,18 +2,12 @@
 export default {
     name: 'FooterItem',
     data() {
-        let copyright = 2022;
-        let football = `https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/football-02.png`
-        let nombreCompleto = `Nicolás Batista Piñeyro`;
-        let portfolio = `https://nicolasbatista.netlify.app/`;
-        let titulo = `Estadios del Uruguay`;
-        return {
-            copyright,
-            football,
-            nombreCompleto,
-            portfolio,
-            titulo,
-        }
+        let enlaces = [
+            `https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/football-02.png`,
+            `https://nicolasbatista.netlify.app/`
+        ];
+        let titulos = [2022, `Nicolás Batista Piñeyro`, `Estadios del Uruguay`];
+        return { enlaces, titulos }
     }
 }
 </script>
@@ -21,11 +15,11 @@ export default {
 <template>
     <footer>
         <div>
-            <h1>{{ titulo }}
-                <img :src='football' :alt='titulo' :title='titulo' />
+            <h1>{{ titulos[2] }}
+                <img :src='enlaces[0]' :alt='titulos[2]' :title='titulos[2]' />
             </h1>
-            <a :href='portfolio' target='_blank'>
-                <p>{{ nombreCompleto }} &copy; {{ copyright }}</p>
+            <a :href='enlaces[1]' target='_blank'>
+                <p>{{ titulos[1] }} &copy; {{ titulos[0] }}</p>
             </a>
         </div>
     </footer>

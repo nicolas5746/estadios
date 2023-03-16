@@ -7,36 +7,36 @@ export default {
         },
         reinciarPagina() {
             window.location.reload();
-        },
+        }
     },
     props: {
         departamentos: {
             type: Array,
-            default: () => Array,
+            default: () => Array
         },
         departamentoSeleccionado: {
             type: String,
-            default: () => String,
+            default: () => String
         },
         reiniciarSeleccion: {
             type: String,
-            default: () => `Reiniciar`,
+            default: () => `Reiniciar`
         },
         seleccionar: {
             type: String,
-            default: () => `Seleccionar...`,
+            default: () => `Seleccionar...`
         },
         seleccionarDepartamento: {
             type: String,
-            default: () => `Seleccionar departamento`,
-        },
-    },
+            default: () => `Seleccionar departamento`
+        }
+    }
 }
 </script>
 
 <template>
     <div class='select'>
-        <label for='seleccionar-departamento'>{{ seleccionarDepartamento }}</label>
+        <label for='seleccionar-departamento' :title='seleccionarDepartamento'>{{ seleccionarDepartamento }}</label>
         <select id='seleccionar-departamento' :value='departamentoSeleccionado'
             @input='event => departamentoSeleccionado = event.target.value' @change='seleccionPorDepartamento'>
             <option disabled value=''>{{ seleccionar }}</option>
@@ -44,7 +44,7 @@ export default {
                 {{ departamento }}
             </option>
         </select>
-        <button type='button' @click='reinciarPagina'>{{ reiniciarSeleccion }}</button>
+        <button type='button' :title='reiniciarSeleccion' @click='reinciarPagina'>{{ reiniciarSeleccion }}</button>
     </div>
 </template>
 

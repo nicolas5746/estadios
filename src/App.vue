@@ -4,7 +4,7 @@ import NavbarItem from '@/components/NavbarItem.vue';
 </script>
   
 <template>
-  <div class='page'>
+  <div class='principal'>
     <NavbarItem />
     <FooterItem />
   </div>
@@ -13,7 +13,7 @@ import NavbarItem from '@/components/NavbarItem.vue';
 <style scoped lang='sass'>
 @use '@styles/colours'
 
-.page
+.principal
   background-image: linear-gradient(15deg, colours.$steelblue 0%, colours.$skyblue 80%, colours.$white 100%)
   bottom: 0
   left: 0

@@ -2,16 +2,13 @@
 export default {
   name: 'HomeView',
   data() {
-    let descripcion = `es un sitio web con información sobre los estadios de fútbol más importantes en los 19 departamentos del país.`;
-    let estadios = `ver estadios`;
-    let football = `https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/football-01.png`;
-    let titulo = `Estadios del Uruguay`;
-    return {
-      descripcion,
-      estadios,
-      football,
-      titulo,
-    }
+    let enlace = `https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/football-01.png`;
+    let titulos =
+      [
+        `Estadios del Uruguay`,
+        `es un sitio web con información sobre los estadios de fútbol más importantes en los 19 departamentos del país.`
+      ];
+    return { enlace, titulos }
   }
 }
 </script>
@@ -19,9 +16,9 @@ export default {
 <template>
   <main>
     <div class='home-view'>
-      <img :src='football' :alt='titulo' :title='titulo' />
-      <h1>{{ titulo }}</h1>
-      <p>{{ descripcion }}</p>
+      <img :src='enlace' :alt='titulos[0]' :title='titulos[0]' />
+      <h1>{{ titulos[0] }}</h1>
+      <p>{{ titulos[1] }}</p>
     </div>
   </main>
 </template>

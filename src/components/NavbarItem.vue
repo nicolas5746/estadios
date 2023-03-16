@@ -3,18 +3,21 @@ import { RouterLink, RouterView } from 'vue-router';
 export default {
     name: 'NavbarItem',
     data() {
-        let homeNavTitle = `inicio`;
-        let estadiosNavTitle = `estadios`;
-        return { homeNavTitle, estadiosNavTitle, }
-    },
+        let titulos = [`inicio`, `estadios`];
+        return { titulos }
+    }
 }
 </script>
 
 <template>
     <div>
         <nav>
-            <RouterLink to='/'>{{ homeNavTitle }}</RouterLink>
-            <RouterLink to='/estadios'>{{ estadiosNavTitle }}</RouterLink>
+            <RouterLink to='/' :title='titulos[0].toUpperCase()'>
+                {{ titulos[0] }}
+            </RouterLink>
+            <RouterLink to='/estadios' :title='titulos[1].toUpperCase()'>
+                {{ titulos[1] }}
+            </RouterLink>
         </nav>
         <RouterView />
     </div>

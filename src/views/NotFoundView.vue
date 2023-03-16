@@ -2,22 +2,20 @@
 export default {
   name: 'NotFoundView',
   data() {
-    let football = `https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/football-01.png`;
-    let notFound = `página no encontrada`;
-    let titulo = `Estadios del Uruguay`;
-    return {
-      football,
-      notFound,
-      titulo,
-    }
+    let enlace = `https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/football-01.png`;
+    let titulos = [
+      `Estadios del Uruguay`,
+      `página no encontrada`
+    ];
+    return { enlace, titulos }
   }
 }
 </script>
 
 <template>
   <div class='not-found'>
-    <img :src='football' :alt='titulo' :title='titulo' />
-    <h1>{{ notFound }}</h1>
+    <img :src='enlace' :alt='titulos[0]' :title='titulos[0]' />
+    <h1>{{ titulos[1] }}</h1>
   </div>
 </template>
 

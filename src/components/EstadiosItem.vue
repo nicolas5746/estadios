@@ -4,7 +4,7 @@ import DepartamentosItem from '@/components/DepartamentosItem.vue';
 export default {
     name: 'EstadiosItem',
     components: {
-        DepartamentosItem,
+        DepartamentosItem
     },
     methods: {
         async getData() {
@@ -17,17 +17,17 @@ export default {
         },
         handleCerrarOverlay(index) {
             return {
-                'cerrar-imagen-expandida': this.indice === index,
+                'cerrar-imagen-expandida': this.indice === index
             }
         },
         handleImagenExpandida(index) {
             return {
-                'imagen-estadio-expandida': this.indice === index,
+                'imagen-estadio-expandida': this.indice === index
             }
         },
         handleImagenOverlay(index) {
             return {
-                'imagen-estadio-overlay': this.indice === index,
+                'imagen-estadio-overlay': this.indice === index
             }
         },
         handleIndice(index) {
@@ -44,7 +44,7 @@ export default {
         handleExpandirImagen(index) {
             this.handleIndice(index);
             this.expandir = true;
-        },
+        }
     },
     mounted() {
         this.getData();
@@ -55,7 +55,7 @@ export default {
         let enlaces = [
             `https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/expandir.png`,
             `https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/mapa.png`,
-            `https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/no-picture.jpg`,
+            `https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/no-picture.jpg`
         ];
         let estadios = [];
         let expandir = false;
@@ -64,7 +64,7 @@ export default {
             `Cerrar`,
             `Departamentos`,
             `Expandir`,
-            `Más información`,
+            `Más información`
         ];
         return {
             departamentos,
@@ -73,9 +73,9 @@ export default {
             estadios,
             expandir,
             indice,
-            titulos,
+            titulos
         }
-    },
+    }
 }
 </script>
 
@@ -89,14 +89,13 @@ export default {
             <img :src='enlaces[1]' :alt='titulos[1]' :title='titulos[1]' />
         </div>
         <div class='estadios-grid'>
-            <div class='estadios-overlay' v-for='(estadio, index) in estadios' :key='estadio'
-                v-show='estadio.departamento === departamentoSeleccionado'>
+            <div class='estadios-overlay' v-show='estadio.departamento === departamentoSeleccionado' :key='estadio'
+                v-for='(estadio, index) in estadios'>
                 <div :class='handleImagenOverlay(index)'>
-                    <img class='imagen-estadio' v-if='estadio.imagen != null' :class='handleImagenExpandida(index)'
-                        :src='estadio.imagen' :alt='estadio.nombre' :title='estadio.nombre' />
-                    <img class='imagen-estadio' v-else='estadio.imagen === null' :src='enlaces[2]' :alt='estadio.nombre'
-                        :title='estadio.nombre' />
-                    <div :class='handleCerrarOverlay(index)' v-show='expandir' :title='titulos[1]'
+                    <img class='imagen-estadio' :class='handleImagenExpandida(index)' :src='estadio.imagen'
+                        :alt='estadio.nombre' :title='estadio.nombre' v-if='estadio.imagen != null' />
+                    <img class='imagen-estadio' :src='enlaces[2]' :alt='estadio.nombre' :title='estadio.nombre' v-else />
+                    <div v-show='expandir' :class='handleCerrarOverlay(index)' :title='titulos[0]'
                         @click='() => handleContraerImagen(index)'>
                     </div>
                 </div>
@@ -107,11 +106,14 @@ export default {
                         <p>Propietario: {{ estadio.propietario }}</p>
                         <p>Ciudad/Localidad: {{ estadio.localidad }}</p>
                         <p>Inauguración: {{ estadio.inauguracion }}</p>
-                        <a :href='estadio.wikipedia' target='_blank'>
-                            <button class='detalles' type='button'>{{ titulos[3] }}</button>
+                        <a target='_blank' :href='estadio.wikipedia'>
+                            <button class='detalles' type='button' :title='titulos[3]'>
+                                {{ titulos[3] }}
+                            </button>
                         </a>
-                        <img v-if='expandir === false && estadio.imagen != null' :src='enlaces[0]' :alt='titulos[2]'
-                            :title='titulos[2]' @click='() => handleExpandirImagen(index)' />
+                        <img :src='enlaces[0]' :alt='titulos[2]' :title='titulos[2]'
+                            @click='() => handleExpandirImagen(index)'
+                            v-if='expandir === false && estadio.imagen != null' />
                     </div>
                 </div>
             </div>

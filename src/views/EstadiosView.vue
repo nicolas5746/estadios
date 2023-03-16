@@ -3,7 +3,7 @@ import EstadiosItem from '@/components/EstadiosItem.vue';
 export default {
     name: 'EstadiosView',
     components: {
-        EstadiosItem,
+        EstadiosItem
     }
 }
 </script>
