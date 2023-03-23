@@ -181,13 +181,10 @@ export default {
 
 .imagen-estadio-overlay
     background-color: colours.$squid-ink
-    bottom: 0
     height: 100%
-    left: 0
+    inset: 0
     opacity: 0.985
     position: fixed
-    right: 0
-    top: 0
     width: 100%
     z-index: 1
 
@@ -255,15 +252,14 @@ export default {
           cursor: pointer
           transform: scale(1.2)
     & h1
+        color: colours.$linen
         font-family: fonts.$lato
         text-transform: uppercase
-        &:hover
-            color: colours.$dark-orange
     & p
+        color: colours.$gainsboro
         font-family: fonts.$roboto
     & h1,
     & p
-        color: colours.$dark-white
         font-size: 0.75rem
         line-height: 0.9
         margin: 0.5%
@@ -276,7 +272,7 @@ export default {
     background-color: colours.$transparent-dark-grey
     border: 0.1em solid colours.$dark-white
     border-radius: 0.5em
-    color: colours.$dark-white
+    color: colours.$gainsboro
     cursor: pointer
     font-size: 0.75rem
     padding: 0.5%

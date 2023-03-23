@@ -15,10 +15,7 @@ import NavbarItem from '@/components/NavbarItem.vue';
 
 .principal
   background-image: linear-gradient(15deg, colours.$steelblue 0%, colours.$skyblue 80%, colours.$white 100%)
-  bottom: 0
-  left: 0
+  inset: 0
   position: fixed
-  right: 0
-  top: 0
   width: 100%
 </style>
