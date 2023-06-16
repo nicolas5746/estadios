@@ -1,5 +1,5 @@
 <script>
-export default (await import('vue')).defineComponent({
+export default {
   name: 'NotFoundView',
   data() {
     let enlace = `https://i.postimg.cc/fLcwC7R2/football-01.png`;
@@ -9,7 +9,7 @@ export default (await import('vue')).defineComponent({
     ];
     return { enlace, titulos }
   }
-});
+}
 </script>
 
 <template>

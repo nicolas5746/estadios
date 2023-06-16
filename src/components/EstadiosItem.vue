@@ -1,7 +1,7 @@
 <script>
 import axios from 'axios';
 import DepartamentosItem from '@/components/DepartamentosItem.vue';
-export default (await import('vue')).defineComponent({
+export default {
     name: 'EstadiosItem',
     components: {
         DepartamentosItem
@@ -77,7 +77,7 @@ export default (await import('vue')).defineComponent({
             titulos
         }
     }
-});
+}
 </script>
 
 <template>

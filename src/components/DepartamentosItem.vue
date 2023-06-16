@@ -1,5 +1,5 @@
 <script>
-export default (await import('vue')).defineComponent({
+export default {
     name: 'DepartamentosItem',
     methods: {
         seleccionPorDepartamento(event) {
@@ -31,7 +31,7 @@ export default (await import('vue')).defineComponent({
             default: () => `Seleccionar departamento`
         }
     }
-});
+}
 </script>
 
 <template>
