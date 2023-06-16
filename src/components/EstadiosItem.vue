@@ -43,7 +43,7 @@ export default (await import('vue')).defineComponent({
     },
     async mounted() {
         try {
-            const response = await axios.get('https://raw.githubusercontent.com/nicolas5746/db/main/data.json')
+            const response = await axios.get('https://nicolas5746.github.io/db/estadios.json')
             this.departamentos = response.data.departamentos;
             this.estadios = response.data.estadios;
         } catch (error) {
