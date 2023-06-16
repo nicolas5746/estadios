@@ -7,10 +7,13 @@ export default {
         DepartamentosItem
     },
     methods: {
-        async getData() {
-            const response = await axios.get('https://raw.githubusercontent.com/nicolas5746/estadios/master/public/data/data.json');
-            this.departamentos = response.data.departamentos;
-            this.estadios = response.data.estadios;
+        async getDepartamentos() {
+            const response = await axios.get('https://estadiosdeluruguayapi.azurewebsites.net/departamentos');
+            this.departamentos = response.data;
+        },
+        async getEstadios() {
+            const response = await axios.get('https://estadiosdeluruguayapi.azurewebsites.net/estadios');
+            this.estadios = response.data;
         },
         getDepartamentoSeleccionado(departamento) {
             this.departamentoSeleccionado = departamento;
@@ -47,15 +50,16 @@ export default {
         }
     },
     mounted() {
-        this.getData();
+        this.getDepartamentos();
+        this.getEstadios();
     },
     data() {
         let departamentos = [];
         let departamentoSeleccionado = ``;
         let enlaces = [
-            `https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/expandir.png`,
-            `https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/mapa.png`,
-            `https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/no-picture.jpg`
+            `https://i.postimg.cc/6pFtNb7b/expandir.png`,
+            `https://i.postimg.cc/ZYjmq5Bd/mapa.png`,
+            `https://i.postimg.cc/3NxPG24D/no-picture.jpg`
         ];
         let estadios = [];
         let expandir = false;

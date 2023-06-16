@@ -3,7 +3,7 @@ export default {
     name: 'FooterItem',
     data() {
         let enlaces = [
-            `https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/football-02.png`,
+            `https://i.postimg.cc/fLcwC7R2/football-02.png`,
             `https://nicolasbatista.netlify.app/`
         ];
         let titulos = [2022, `Nicolás Batista Piñeyro`, `Estadios del Uruguay`];

@@ -2,7 +2,7 @@
 export default {
   name: 'NotFoundView',
   data() {
-    let enlace = `https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/football-01.png`;
+    let enlace = `https://i.postimg.cc/fLcwC7R2/football-01.png`;
     let titulos = [
       `Estadios del Uruguay`,
       `página no encontrada`
