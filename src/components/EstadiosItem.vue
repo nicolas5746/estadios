@@ -9,11 +9,11 @@ export default {
     methods: {
         async getDepartamentos() {
             const response = await axios.get('https://estadiosdeluruguayapi.azurewebsites.net/departamentos');
-            this.departamentos = response.data;
+            this.departamentos = response.data.departamentos;
         },
         async getEstadios() {
             const response = await axios.get('https://estadiosdeluruguayapi.azurewebsites.net/estadios');
-            this.estadios = response.data;
+            this.estadios = response.data.estadios;
         },
         getDepartamentoSeleccionado(departamento) {
             this.departamentoSeleccionado = departamento;
