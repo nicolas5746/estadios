@@ -1,9 +1,9 @@
 <script>
-export default {
+export default (await import('vue')).defineComponent({
     name: 'DepartamentosItem',
     methods: {
-        seleccionPorDepartamento() {
-            this.$emit('seleccion', this.departamentoSeleccionado);
+        seleccionPorDepartamento(event) {
+            this.$emit('seleccion', event.target.value);
         },
         reinciarPagina() {
             window.location.reload();
@@ -31,20 +31,23 @@ export default {
             default: () => `Seleccionar departamento`
         }
     }
-}
+});
 </script>
 
 <template>
     <div class='select'>
-        <label for='seleccionar-departamento' :title='seleccionarDepartamento'>{{ seleccionarDepartamento }}</label>
-        <select id='seleccionar-departamento' :value='departamentoSeleccionado'
-            @input='event => departamentoSeleccionado = event.target.value' @change='seleccionPorDepartamento'>
+        <label for='seleccionar-departamento' :title='seleccionarDepartamento'>
+            {{ seleccionarDepartamento }}
+        </label>
+        <select id='seleccionar-departamento' :value='departamentoSeleccionado' @input='seleccionPorDepartamento'>
             <option disabled value=''>{{ seleccionar }}</option>
             <option v-for='departamento in departamentos'>
                 {{ departamento }}
             </option>
         </select>
-        <button type='button' :title='reiniciarSeleccion' @click='reinciarPagina'>{{ reiniciarSeleccion }}</button>
+        <button type='button' :title='reiniciarSeleccion' @click='reinciarPagina'>
+            {{ reiniciarSeleccion }}
+        </button>
     </div>
 </template>
 

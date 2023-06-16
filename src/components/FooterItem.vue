@@ -1,5 +1,5 @@
 <script>
-export default {
+export default (await import('vue')).defineComponent({
     name: 'FooterItem',
     data() {
         let enlaces = [
@@ -9,7 +9,7 @@ export default {
         let titulos = [2022, `Nicolás Batista Piñeyro`, `Estadios del Uruguay`];
         return { enlaces, titulos }
     }
-}
+});
 </script>
 
 <template>

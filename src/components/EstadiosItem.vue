@@ -1,20 +1,12 @@
 <script>
 import axios from 'axios';
 import DepartamentosItem from '@/components/DepartamentosItem.vue';
-export default {
+export default (await import('vue')).defineComponent({
     name: 'EstadiosItem',
     components: {
         DepartamentosItem
     },
     methods: {
-        async getDepartamentos() {
-            const response = await axios.get('https://estadiosdeluruguayapi.azurewebsites.net/departamentos');
-            this.departamentos = response.data.departamentos;
-        },
-        async getEstadios() {
-            const response = await axios.get('https://estadiosdeluruguayapi.azurewebsites.net/estadios');
-            this.estadios = response.data.estadios;
-        },
         getDepartamentoSeleccionado(departamento) {
             this.departamentoSeleccionado = departamento;
         },
@@ -49,13 +41,18 @@ export default {
             this.expandir = true;
         }
     },
-    mounted() {
-        this.getDepartamentos();
-        this.getEstadios();
+    async mounted() {
+        try {
+            const response = await axios.get('https://raw.githubusercontent.com/nicolas5746/db/main/data.json')
+            this.departamentos = response.data.departamentos;
+            this.estadios = response.data.estadios;
+        } catch (error) {
+            res.status(500).send(error.data);
+        }
     },
     data() {
         let departamentos = [];
-        let departamentoSeleccionado = ``;
+        let departamentoSeleccionado = '';
         let enlaces = [
             `https://i.postimg.cc/6pFtNb7b/expandir.png`,
             `https://i.postimg.cc/ZYjmq5Bd/mapa.png`,
@@ -80,7 +77,7 @@ export default {
             titulos
         }
     }
-}
+});
 </script>
 
 <template>
@@ -93,7 +90,7 @@ export default {
             <img :src='enlaces[1]' :alt='titulos[1]' :title='titulos[1]' />
         </div>
         <div class='estadios-grid'>
-            <div class='estadios-overlay' v-show='estadio.departamento === departamentoSeleccionado' :key='estadio'
+            <div class='estadios-overlay' v-show='estadio.departamento === departamentoSeleccionado' :key='estadio.id'
                 v-for='(estadio, index) in estadios'>
                 <div :class='handleImagenOverlay(index)'>
                     <img class='imagen-estadio' :class='handleImagenExpandida(index)' :src='estadio.imagen'

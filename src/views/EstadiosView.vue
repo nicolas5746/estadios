@@ -1,11 +1,11 @@
 <script>
 import EstadiosItem from '@/components/EstadiosItem.vue';
-export default {
+export default (await import('vue')).defineComponent({
     name: 'EstadiosView',
     components: {
         EstadiosItem
     }
-}
+});
 </script>
 
 <template>

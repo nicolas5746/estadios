@@ -1,12 +1,12 @@
 <script>
 import { RouterLink, RouterView } from 'vue-router';
-export default {
+export default (await import('vue')).defineComponent({
     name: 'NavbarItem',
     data() {
         let titulos = [`inicio`, `estadios`];
         return { titulos }
     }
-}
+});
 </script>
 
 <template>
