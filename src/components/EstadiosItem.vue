@@ -7,6 +7,30 @@ export default {
         DepartamentosItem
     },
     methods: {
+        async getData() {
+
+            const estadiosURL = 'https://api.jsonbin.io/v3/b/6494ed258e4aa6225eb2d6bc';
+            const departamentosURL = 'https://api.jsonbin.io/v3/b/6494eee69d312622a3741549';
+
+            try {
+                const getDepartamentos = await axios.get(departamentosURL);
+                const getEstadios = await axios.get(estadiosURL);
+                this.departamentos = getDepartamentos.data.record;
+                this.estadios = getEstadios.data.record;
+            } catch (error) {
+                error.response
+                    ?
+                    console.log(error.response.data) +
+                    console.log(error.response.status) +
+                    console.log(error.response.headers)
+                    :
+                    error.request
+                        ?
+                        console.log(error.request)
+                        :
+                        console.log(`Error`, error.message);
+            }
+        },
         getDepartamentoSeleccionado(departamento) {
             this.departamentoSeleccionado = departamento;
         },
@@ -41,14 +65,8 @@ export default {
             this.expandir = true;
         }
     },
-    async mounted() {
-        try {
-            const response = await axios.get('https://nicolas5746.github.io/db/estadios.json')
-            this.departamentos = response.data.departamentos;
-            this.estadios = response.data.estadios;
-        } catch (error) {
-            res.status(500).send(error.data);
-        }
+    mounted() {
+        this.getData();
     },
     data() {
         let departamentos = [];
