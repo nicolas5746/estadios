@@ -9,12 +9,13 @@ export default {
     methods: {
         async getData() {
 
-            const estadiosURL = 'https://api.jsonbin.io/v3/b/6494ed258e4aa6225eb2d6bc';
             const departamentosURL = 'https://api.jsonbin.io/v3/b/6494eee69d312622a3741549';
+            const estadiosURL = 'https://api.jsonbin.io/v3/b/6494ed258e4aa6225eb2d6bc';
 
             try {
                 const getDepartamentos = await axios.get(departamentosURL);
                 const getEstadios = await axios.get(estadiosURL);
+
                 this.departamentos = getDepartamentos.data.record;
                 this.estadios = getEstadios.data.record;
             } catch (error) {
@@ -108,15 +109,14 @@ export default {
             <img :src='enlaces[1]' :alt='titulos[1]' :title='titulos[1]' />
         </div>
         <div class='estadios-grid'>
-            <div class='estadios-overlay' v-show='estadio.departamento === departamentoSeleccionado' :key='estadio.id'
-                v-for='(estadio, index) in estadios'>
+            <div class='estadios-overlay' v-show='estadio.departamento === departamentoSeleccionado' tabindex='0'
+                :key='estadio.id' v-for='(estadio, index) in estadios' @keyup.esc='() => handleContraerImagen(index)'>
                 <div :class='handleImagenOverlay(index)'>
                     <img class='imagen-estadio' :class='handleImagenExpandida(index)' :src='estadio.imagen'
                         :alt='estadio.nombre' :title='estadio.nombre' v-if='estadio.imagen != null' />
                     <img class='imagen-estadio' :src='enlaces[2]' :alt='estadio.nombre' :title='estadio.nombre' v-else />
                     <div v-show='expandir' :class='handleCerrarOverlay(index)' :title='titulos[0]'
-                        @click='() => handleContraerImagen(index)'>
-                    </div>
+                        @click='() => handleContraerImagen(index)' />
                 </div>
                 <div class='estadios-seleccionados'>
                     <div class='info-estadios'>
@@ -136,7 +136,7 @@ export default {
                     </div>
                 </div>
             </div>
-            <span></span>
+            <span />
         </div>
     </div>
 </template>
@@ -196,7 +196,7 @@ export default {
             box-shadow: none
             opacity: 1
             &:not(:hover)
-                filter: brightness(1.2) saturate(1.1) contrast(1)            
+                filter: brightness(1.2) saturate(1.1) contrast(1)
 
 .imagen-estadio-overlay
     background-color: colours.$squid-ink

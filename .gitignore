@@ -120,6 +120,7 @@ __benchmarks__
 .yarn/build-state.yml
 .yarn/install-state.gz
 .yarn-integrity
+.vscode
 benchmarks/graphs
 bin
 bower_components

@@ -6,7 +6,8 @@ export default {
             this.$emit('seleccion', event.target.value);
         },
         reinciarPagina() {
-            window.location.reload();
+            //window.location.reload();
+            return this.seleccionar;
         }
     },
     props: {
@@ -35,20 +36,21 @@ export default {
 </script>
 
 <template>
-    <div class='select'>
+    <form class='select'>
         <label for='seleccionar-departamento' :title='seleccionarDepartamento'>
             {{ seleccionarDepartamento }}
         </label>
         <select id='seleccionar-departamento' :value='departamentoSeleccionado' @input='seleccionPorDepartamento'>
-            <option disabled value=''>{{ seleccionar }}</option>
+            <option disabled value=''>{{ reinciarPagina() }}</option>
+            <option hidden value=''>{{ reinciarPagina() }}</option>
             <option v-for='departamento in departamentos'>
                 {{ departamento }}
             </option>
         </select>
-        <button type='button' :title='reiniciarSeleccion' @click='reinciarPagina'>
+        <button type='reset' :title='reiniciarSeleccion'>
             {{ reiniciarSeleccion }}
         </button>
-    </div>
+    </form>
 </template>
 
 <style lang='sass'>
