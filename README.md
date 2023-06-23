@@ -1,6 +1,6 @@
 [Estadios del Uruguay](https://estadiosdeluruguay.netlify.app/)
 
-![Estadios del Uruguay](https://raw.githubusercontent.com/nicolas5746/estadios/master/public/images/centenario.png)
+![Estadios del Uruguay](https://i.postimg.cc/sDcMszy6/centenario.webp)
 
 The MIT License
 
