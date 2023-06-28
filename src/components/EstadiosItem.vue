@@ -34,6 +34,7 @@ export default {
         },
         getDepartamentoSeleccionado(departamento) {
             this.departamentoSeleccionado = departamento;
+            this.seleccionado = true;
         },
         handleCerrarOverlay(index) {
             return {
@@ -64,6 +65,9 @@ export default {
         handleExpandirImagen(index) {
             this.handleIndice(index);
             this.expandir = true;
+        },
+        handleReiniciar() {
+            this.seleccionado = false;
         }
     },
     mounted() {
@@ -73,18 +77,19 @@ export default {
         let departamentos = [];
         let departamentoSeleccionado = '';
         let enlaces = [
+            `https://i.postimg.cc/3NxPG24D/no-picture.jpg`,
             `https://i.postimg.cc/6pFtNb7b/expandir.png`,
-            `https://i.postimg.cc/ZYjmq5Bd/mapa.png`,
-            `https://i.postimg.cc/3NxPG24D/no-picture.jpg`
+            `https://i.postimg.cc/ZYjmq5Bd/mapa.png`
         ];
         let estadios = [];
         let expandir = false;
         let indice = null;
+        let seleccionado = false;
         let titulos = [
             `Cerrar`,
-            `Departamentos`,
+            `Más información`,
             `Expandir`,
-            `Más información`
+            `Departamentos`
         ];
         return {
             departamentos,
@@ -93,6 +98,7 @@ export default {
             estadios,
             expandir,
             indice,
+            seleccionado,
             titulos
         }
     }
@@ -103,18 +109,15 @@ export default {
     <div class='estadios'>
         <div class='seleccionar-departamentos'>
             <DepartamentosItem :departamentos='departamentos' :departamentoSeleccionado='departamentoSeleccionado'
-                @seleccion='getDepartamentoSeleccionado' />
+                @reiniciar='handleReiniciar' @seleccion='getDepartamentoSeleccionado' />
         </div>
-        <div class='mapa' v-if='!departamentoSeleccionado'>
-            <img :src='enlaces[1]' :alt='titulos[1]' :title='titulos[1]' />
-        </div>
-        <div class='estadios-grid'>
+        <div class='estadios-grid' v-if='seleccionado'>
             <div class='estadios-overlay' v-show='estadio.departamento === departamentoSeleccionado' tabindex='0'
                 :key='estadio.id' v-for='(estadio, index) in estadios' @keyup.esc='() => handleContraerImagen(index)'>
                 <div :class='handleImagenOverlay(index)'>
                     <img class='imagen-estadio' :class='handleImagenExpandida(index)' :src='estadio.imagen'
                         :alt='estadio.nombre' :title='estadio.nombre' v-if='estadio.imagen != null' />
-                    <img class='imagen-estadio' :src='enlaces[2]' :alt='estadio.nombre' :title='estadio.nombre' v-else />
+                    <img class='imagen-estadio' :src='enlaces[0]' :alt='estadio.nombre' :title='estadio.nombre' v-else />
                     <div v-show='expandir' :class='handleCerrarOverlay(index)' :title='titulos[0]'
                         @click='() => handleContraerImagen(index)' />
                 </div>
@@ -126,17 +129,20 @@ export default {
                         <p>Ciudad/Localidad: {{ estadio.localidad }}</p>
                         <p>Inauguración: {{ estadio.inauguracion }}</p>
                         <a target='_blank' :href='estadio.wikipedia'>
-                            <button class='detalles' type='button' :title='titulos[3]'>
-                                {{ titulos[3] }}
+                            <button class='detalles' type='button' :title='titulos[1]'>
+                                {{ titulos[1] }}
                             </button>
                         </a>
-                        <img :src='enlaces[0]' :alt='titulos[2]' :title='titulos[2]'
+                        <img class='expandir-imagen' :src='enlaces[1]' :alt='titulos[2]' :title='titulos[2]'
                             @click='() => handleExpandirImagen(index)'
                             v-if='expandir === false && estadio.imagen != null' />
                     </div>
                 </div>
             </div>
             <span />
+        </div>
+        <div class='mapa' v-else>
+            <img :src='enlaces[2]' :alt='titulos[3]' :title='titulos[3]' />
         </div>
     </div>
 </template>
@@ -153,14 +159,6 @@ export default {
     padding: 0 5%
     width: 100%
     z-index: 1
-
-.mapa
-    & img
-        display: block
-        filter: grayscale(100%)
-        height: 100%
-        margin: 25% 35%
-        width: 100%
 
 .seleccionar-departamentos
     width: 20%
@@ -259,17 +257,6 @@ export default {
     padding: 5% 4%
     position: absolute
     width: 100%
-    & img
-        bottom: 20%
-        filter: invert(100%) sepia(100%) saturate(100%) brightness(100%) contrast(75%)
-        height: 6%
-        position: absolute
-        right: 15%
-        transition: 0.6s
-        width: 6%
-        &:hover
-          cursor: pointer
-          transform: scale(1.2)
     & h1
         color: colours.$linen
         font-family: fonts.$lato
@@ -287,6 +274,18 @@ export default {
         text-align: left
         white-space: normal
 
+.expandir-imagen
+    bottom: 22%
+    filter: invert(100%) sepia(100%) saturate(100%) brightness(100%) contrast(75%)
+    height: 6%
+    position: absolute
+    right: 15%
+    transition: 0.6s
+    width: 6%
+    &:hover
+        cursor: pointer
+        transform: scale(1.2)
+
 .detalles
     background-color: colours.$transparent-dark-grey
     border: 0.1em solid colours.$dark-white
@@ -294,6 +293,7 @@ export default {
     color: colours.$gainsboro
     cursor: pointer
     font-size: 0.75rem
+    margin-top: 5%
     padding: 0.5%
     transform: translateY(20%)
     &:link
@@ -304,6 +304,17 @@ export default {
         color: colours.$dark-orange
     &:active
         color: colours.$neon-orange
+
+.mapa
+    display: block
+    margin: 0 auto
+    & img
+        filter: grayscale(100%)
+        height: 60%
+        margin-left: -12%
+        margin-top: 10%
+        position: relative
+        width: 60%
 
 @media screen and (max-width: 320px)
     .estadios-overlay
@@ -372,10 +383,6 @@ export default {
         font-size: 0.5rem
 
 @media screen and (max-width: 850px)
-    .mapa
-        & img
-            margin: 25% 60%
-
     .imagen-estadio-expandida
         height: 60vh
         margin: 15% 1% 2% 2%
@@ -384,6 +391,16 @@ export default {
     .estadios-grid
         grid-template-columns: 45% 45%
         padding: 5% 5% 2% 10%
+
+    .expandir-imagen
+        bottom: 12%
+
+    .detalles
+        margin-top: 1%
+
+    .mapa
+        & img
+            margin-left: 12%
 
 @media screen and (min-width: 851px) and (max-width: 1199px)
     .imagen-estadio

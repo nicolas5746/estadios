@@ -3,7 +3,7 @@ import { RouterLink, RouterView } from 'vue-router';
 export default {
     name: 'NavbarItem',
     data() {
-        let titulos = [`inicio`, `estadios`];
+        let titulos = [`Inicio`, `Estadios`];
         return { titulos }
     }
 }
@@ -12,10 +12,10 @@ export default {
 <template>
     <div>
         <nav>
-            <RouterLink to='/' :title='titulos[0].toUpperCase()'>
+            <RouterLink to='/' :title='titulos[0]'>
                 {{ titulos[0] }}
             </RouterLink>
-            <RouterLink to='/estadios' :title='titulos[1].toUpperCase()'>
+            <RouterLink to='/estadios' :title='titulos[1]'>
                 {{ titulos[1] }}
             </RouterLink>
         </nav>
@@ -49,7 +49,6 @@ nav
         margin: 1%
         padding: 0.8%
         text-decoration: none
-        text-transform: uppercase
         white-space: nowrap
         &:link
             color: colours.$dark-orange

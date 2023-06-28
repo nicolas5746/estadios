@@ -6,7 +6,7 @@ export default {
             `https://i.postimg.cc/fLcwC7R2/football-02.png`,
             `https://nicolasbatista.netlify.app/`
         ];
-        let titulos = [2022, `Nicolás Batista Piñeyro`, `Estadios del Uruguay`];
+        let titulos = [`Estadios del Uruguay`, `Nicolás Batista Piñeyro`, 2022];
         return { enlaces, titulos }
     }
 }
@@ -15,11 +15,11 @@ export default {
 <template>
     <footer>
         <div>
-            <h1>{{ titulos[2] }}
-                <img :src='enlaces[0]' :alt='titulos[2]' :title='titulos[2]' />
+            <h1>{{ titulos[0] }}
+                <img :src='enlaces[0]' :alt='titulos[0]' :title='titulos[0]' />
             </h1>
             <a :href='enlaces[1]' target='_blank'>
-                <p>{{ titulos[1] }} &copy; {{ titulos[0] }}</p>
+                <p>{{ titulos[1] }} &copy; {{ titulos[2] }}</p>
             </a>
         </div>
     </footer>

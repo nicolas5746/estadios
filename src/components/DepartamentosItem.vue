@@ -2,12 +2,11 @@
 export default {
     name: 'DepartamentosItem',
     methods: {
-        seleccionPorDepartamento(event) {
+        handleSeleccionPorDepartamento(event) {
             this.$emit('seleccion', event.target.value);
         },
-        reinciarPagina() {
-            //window.location.reload();
-            return this.seleccionar;
+        handleReinciar(event) {
+            this.$emit('reiniciar', event.target.value);
         }
     },
     props: {
@@ -18,38 +17,28 @@ export default {
         departamentoSeleccionado: {
             type: String,
             default: () => String
-        },
-        reiniciarSeleccion: {
-            type: String,
-            default: () => `Reiniciar`
-        },
-        seleccionar: {
-            type: String,
-            default: () => `Seleccionar...`
-        },
-        seleccionarDepartamento: {
-            type: String,
-            default: () => `Seleccionar departamento`
         }
+    },
+    data() {
+        let titulos = [
+            `Seleccionar departamento`,
+            `Seleccionar...`,
+            `Reiniciar`
+        ];
+        return { titulos }
     }
 }
 </script>
 
 <template>
     <form class='select'>
-        <label for='seleccionar-departamento' :title='seleccionarDepartamento'>
-            {{ seleccionarDepartamento }}
-        </label>
-        <select id='seleccionar-departamento' :value='departamentoSeleccionado' @input='seleccionPorDepartamento'>
-            <option disabled value=''>{{ reinciarPagina() }}</option>
-            <option hidden value=''>{{ reinciarPagina() }}</option>
-            <option v-for='departamento in departamentos'>
-                {{ departamento }}
-            </option>
+        <label for='seleccionar-departamento' :title='titulos[0]'>{{ titulos[0] }}</label>
+        <select id='seleccionar-departamento' :value='departamentoSeleccionado' @input='handleSeleccionPorDepartamento'>
+            <option disabled value=''>{{ titulos[1] }}</option>
+            <option hidden value=''>{{ titulos[1] }}</option>
+            <option v-for='departamento in departamentos'>{{ departamento }}</option>
         </select>
-        <button type='reset' :title='reiniciarSeleccion'>
-            {{ reiniciarSeleccion }}
-        </button>
+        <button @click='handleReinciar' type='reset' :title='titulos[2]'>{{ titulos[2] }}</button>
     </form>
 </template>
 
@@ -58,8 +47,8 @@ export default {
 @use '@styles/fonts'
 
 #seleccionar-departamento
-        font-size: 0.9rem
-        margin: 1% auto
+    font-size: 0.9rem
+    margin: 1% auto
 
 .select
     align-items: center
@@ -73,12 +62,11 @@ export default {
     margin-top: 10%
     position: fixed
     top: 15%
-    width: 100%
-    
-    label
+    width: 100% 
+    & label
         font-size: 1rem
         text-align: center
-    button
+    & button
         background-color: transparent
         border-color: transparent
         border-radius: 0.5em
@@ -96,8 +84,8 @@ export default {
             color: colours.$dark-orange
         &:active
             color: colours.$neon-orange
-    label,
-    button
+    & label,
+    & button
         margin: 0
         padding: 0
 
@@ -106,9 +94,9 @@ export default {
         font-size: 0.4rem
 
     .select
-        label
+        & label
             font-size: 0.5rem
-        button
+        & button
             font-size: 0.3rem
 
 @media screen and (min-width: 600px) and (max-width: 1199px)
@@ -116,8 +104,8 @@ export default {
         font-size: 0.6rem
 
     .select
-        label
+        & label
             font-size: 0.7rem
-        button
+        & button
             font-size: 0.5rem
 </style>
