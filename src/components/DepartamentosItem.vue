@@ -38,7 +38,7 @@ export default {
             <option hidden value=''>{{ titulos[1] }}</option>
             <option v-for='departamento in departamentos'>{{ departamento }}</option>
         </select>
-        <button @click='handleReinciar' type='reset' :title='titulos[2]'>{{ titulos[2] }}</button>
+        <button type='reset' :title='titulos[2]' @click='handleReinciar'>{{ titulos[2] }}</button>
     </form>
 </template>
 

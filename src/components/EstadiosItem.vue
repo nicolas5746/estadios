@@ -9,15 +9,15 @@ export default {
     methods: {
         async getData() {
 
-            const departamentosURL = 'https://api.jsonbin.io/v3/b/6494eee69d312622a3741549';
-            const estadiosURL = 'https://api.jsonbin.io/v3/b/6494ed258e4aa6225eb2d6bc';
+            const departamentosURL = 'https://api.npoint.io/848b93c0195bce25cb90';
+            const estadiosURL = 'https://api.npoint.io/d8c6c452bee7e251fda5';
 
             try {
                 const getDepartamentos = await axios.get(departamentosURL);
                 const getEstadios = await axios.get(estadiosURL);
 
-                this.departamentos = getDepartamentos.data.record;
-                this.estadios = getEstadios.data.record;
+                this.departamentos = getDepartamentos.data;
+                this.estadios = getEstadios.data;
             } catch (error) {
                 error.response
                     ?
@@ -66,7 +66,7 @@ export default {
             this.handleIndice(index);
             this.expandir = true;
         },
-        handleReiniciar() {
+        handleReiniciado() {
             this.seleccionado = false;
         }
     },
@@ -109,14 +109,19 @@ export default {
     <div class='estadios'>
         <div class='seleccionar-departamentos'>
             <DepartamentosItem :departamentos='departamentos' :departamentoSeleccionado='departamentoSeleccionado'
-                @reiniciar='handleReiniciar' @seleccion='getDepartamentoSeleccionado' />
+                @reiniciar='handleReiniciado' @seleccion='getDepartamentoSeleccionado' />
         </div>
         <div class='estadios-grid' v-if='seleccionado'>
             <div class='estadios-overlay' v-show='estadio.departamento === departamentoSeleccionado' tabindex='0'
                 :key='estadio.id' v-for='(estadio, index) in estadios' @keyup.esc='() => handleContraerImagen(index)'>
                 <div :class='handleImagenOverlay(index)'>
                     <img class='imagen-estadio' :class='handleImagenExpandida(index)' :src='estadio.imagen'
-                        :alt='estadio.nombre' :title='estadio.nombre' v-if='estadio.imagen != null' />
+                        :alt='estadio.nombre' :title='`Nombre:  ` + estadio.nombre + `\n` +
+                            `Capacidad:  ` + estadio.capacidad + `\n` +
+                            `Propietario:  ` + estadio.propietario + `\n` +
+                            `Ciudad/Localidad:  ` + estadio.localidad + `\n` +
+                            `Inauguración:  ` + estadio.inauguracion + `\n`
+                            ' v-if='estadio.imagen != null' />
                     <img class='imagen-estadio' :src='enlaces[0]' :alt='estadio.nombre' :title='estadio.nombre' v-else />
                     <div v-show='expandir' :class='handleCerrarOverlay(index)' :title='titulos[0]'
                         @click='() => handleContraerImagen(index)' />
@@ -128,7 +133,7 @@ export default {
                         <p>Propietario: {{ estadio.propietario }}</p>
                         <p>Ciudad/Localidad: {{ estadio.localidad }}</p>
                         <p>Inauguración: {{ estadio.inauguracion }}</p>
-                        <a target='_blank' :href='estadio.wikipedia'>
+                        <a target='_blank' :href='estadio.informacion'>
                             <button class='detalles' type='button' :title='titulos[1]'>
                                 {{ titulos[1] }}
                             </button>
@@ -393,7 +398,7 @@ export default {
         padding: 5% 5% 2% 10%
 
     .expandir-imagen
-        bottom: 12%
+        bottom: 18%
 
     .detalles
         margin-top: 1%
