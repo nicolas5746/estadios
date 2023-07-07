@@ -47,8 +47,30 @@ export default {
 @use '@styles/fonts'
 
 #seleccionar-departamento
+    background-color: colours.$papaya-whip
+    border-radius: 0.5em
+    color: colours.$squid-ink
+    font-family: fonts.$roboto
     font-size: 0.9rem
+    font-weight: 500
     margin: 1% auto
+    padding: 0.5%
+    & option
+        color: colours.$dark-grey
+        font-family: fonts.$montserrat
+        font-size: 0.8rem
+        font-weight: 500
+        &:checked
+            background-color: colours.$dodger-blue
+            color: colours.$azure
+        &:not(:checked)
+            background-color: colours.$dark-white
+    &:hover
+        background-color: colours.$powderblue
+        cursor: pointer
+    &:focus
+        background-color: colours.$dodger-blue
+        color: colours.$azure
 
 .select
     align-items: center
@@ -74,6 +96,7 @@ export default {
         display: block
         font-family: fonts.$montserrat
         font-size: 0.8rem
+        font-weight: 400
         text-decoration: none
         width: 60%
         &:link
@@ -92,6 +115,8 @@ export default {
 @media screen and (max-width: 599px)
     #seleccionar-departamento
         font-size: 0.4rem
+        & option
+            font-size: 0.35rem
 
     .select
         & label
@@ -102,6 +127,8 @@ export default {
 @media screen and (min-width: 600px) and (max-width: 1199px)
     #seleccionar-departamento
         font-size: 0.6rem
+        & option
+            font-size: 0.55rem
 
     .select
         & label

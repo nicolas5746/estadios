@@ -405,7 +405,7 @@ export default {
 
     .mapa
         & img
-            margin-left: 12%
+            margin-left: 12.5%
 
 @media screen and (min-width: 851px) and (max-width: 1199px)
     .imagen-estadio

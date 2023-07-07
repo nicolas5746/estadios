@@ -46,6 +46,7 @@ nav
         color: colours.$dark-orange
         font-family: fonts.$lato
         font-size: 1rem
+        font-weight: 800
         margin: 1%
         padding: 0.8%
         text-decoration: none
