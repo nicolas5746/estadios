@@ -76,13 +76,13 @@ export default {
     data() {
         let departamentos = [];
         let departamentoSeleccionado = '';
-        let enlaces = [
+        let estadios = [];
+        let expandir = false;
+        let imagenes = [
             `https://i.postimg.cc/3NxPG24D/no-picture.jpg`,
             `https://i.postimg.cc/6pFtNb7b/expandir.png`,
             `https://i.postimg.cc/ZYjmq5Bd/mapa.png`
         ];
-        let estadios = [];
-        let expandir = false;
         let indice = null;
         let seleccionado = false;
         let titulos = [
@@ -94,9 +94,9 @@ export default {
         return {
             departamentos,
             departamentoSeleccionado,
-            enlaces,
             estadios,
             expandir,
+            imagenes,
             indice,
             seleccionado,
             titulos
@@ -122,7 +122,7 @@ export default {
                             `Ciudad/Localidad:  ` + estadio.localidad + `\n` +
                             `Inauguración:  ` + estadio.inauguracion + `\n`
                             ' v-if='estadio.imagen != null' />
-                    <img class='imagen-estadio' :src='enlaces[0]' :alt='estadio.nombre' :title='estadio.nombre' v-else />
+                    <img class='imagen-estadio' :src='imagenes[0]' :alt='estadio.nombre' :title='estadio.nombre' v-else />
                     <div v-show='expandir' :class='handleCerrarOverlay(index)' :title='titulos[0]'
                         @click='() => handleContraerImagen(index)' />
                 </div>
@@ -138,16 +138,16 @@ export default {
                                 {{ titulos[1] }}
                             </button>
                         </a>
-                        <img class='expandir-imagen' :src='enlaces[1]' :alt='titulos[2]' :title='titulos[2]'
+                        <img class='expandir-imagen' :src='imagenes[1]' :alt='titulos[2]' :title='titulos[2]'
                             @click='() => handleExpandirImagen(index)'
                             v-if='expandir === false && estadio.imagen != null' />
                     </div>
                 </div>
             </div>
-            <span />
+            <span></span>
         </div>
         <div class='mapa' v-else>
-            <img :src='enlaces[2]' :alt='titulos[3]' :title='titulos[3]' />
+            <img :src='imagenes[2]' :alt='titulos[3]' :title='titulos[3]' />
         </div>
     </div>
 </template>
@@ -170,7 +170,7 @@ export default {
 
 .estadios-grid
     display: grid
-    grid-gap: 3%
+    gap: 3%
     grid-template-columns: 30% 30% 30%
     overflow: auto
     padding: 5% 1% 2% 5%

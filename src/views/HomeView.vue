@@ -2,13 +2,13 @@
 export default {
   name: 'HomeView',
   data() {
-    let enlace = `https://i.postimg.cc/nzbFqSp9/football-01.png`;
+    let imagen = `https://i.postimg.cc/nzbFqSp9/football-01.png`;
     let titulos =
       [
         `Estadios del Uruguay`,
         `es un sitio web con información sobre los estadios de fútbol más importantes en los 19 departamentos del país.`
       ];
-    return { enlace, titulos }
+    return { imagen, titulos }
   }
 }
 </script>
@@ -16,7 +16,7 @@ export default {
 <template>
   <main>
     <div class='home-view'>
-      <img :src='enlace' :alt='titulos[0]' :title='titulos[0]' />
+      <img :src='imagen' :alt='titulos[0]' :title='titulos[0]' />
       <h1>{{ titulos[0] }}</h1>
       <p>{{ titulos[1] }}</p>
     </div>
