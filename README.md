@@ -1,4 +1,4 @@
-[Estadios del Uruguay](https://estadiosdeluruguay.netlify.app/)
+[Estadios del Uruguay](https://estadiosdeluruguay.codeando.es/)
 
 ![Estadios del Uruguay](https://i.postimg.cc/sDcMszy6/centenario.webp)
 
@@ -10,7 +10,7 @@ Copyright (c)2022 `Nicolás Batista Piñeyro`
 
 `Send me an e-mail to` <nicolas26386@gmail.com>
 
-[Link to My Portfolio](https://nicolasbatista.netlify.app/)
+[Link to My Portfolio](https://nicolasbatista.codeando.es/)
 
 [My LinkedIn Profile](https://www.linkedin.com/in/nicolasbatistadev/)
 
