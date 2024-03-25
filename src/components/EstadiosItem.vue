@@ -1,6 +1,6 @@
 <script>
 import axios from 'axios';
-import DepartamentosItem from '@/components/DepartamentosItem.vue';
+import DepartamentosItem from '@components/DepartamentosItem.vue';
 export default {
     name: 'EstadiosItem',
     components: {
@@ -117,12 +117,13 @@ export default {
                 <div :class='handleImagenOverlay(index)'>
                     <img class='imagen-estadio' :class='handleImagenExpandida(index)' :src='estadio.imagen'
                         :alt='estadio.nombre' :title='`Nombre:  ` + estadio.nombre + `\n` +
-                            `Capacidad:  ` + estadio.capacidad + `\n` +
-                            `Propietario:  ` + estadio.propietario + `\n` +
-                            `Ciudad/Localidad:  ` + estadio.localidad + `\n` +
-                            `Inauguración:  ` + estadio.inauguracion + `\n`
-                            ' v-if='estadio.imagen != null' />
-                    <img class='imagen-estadio' :src='imagenes[0]' :alt='estadio.nombre' :title='estadio.nombre' v-else />
+                `Capacidad:  ` + estadio.capacidad + `\n` +
+                `Propietario:  ` + estadio.propietario + `\n` +
+                `Ciudad/Localidad:  ` + estadio.localidad + `\n` +
+                `Inauguración:  ` + estadio.inauguracion + `\n`
+                ' v-if='estadio.imagen != null' />
+                    <img class='imagen-estadio' :src='imagenes[0]' :alt='estadio.nombre' :title='estadio.nombre'
+                        v-else />
                     <div v-show='expandir' :class='handleCerrarOverlay(index)' :title='titulos[0]'
                         @click='() => handleContraerImagen(index)' />
                 </div>

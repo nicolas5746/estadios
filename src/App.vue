@@ -1,15 +1,15 @@
 <script setup>
-import FooterItem from '@/components/FooterItem.vue';
-import NavbarItem from '@/components/NavbarItem.vue';
+import FooterItem from '@components/FooterItem.vue';
+import NavbarItem from '@components/NavbarItem.vue';
 </script>
-  
+
 <template>
   <div class='principal'>
     <NavbarItem />
     <FooterItem />
   </div>
 </template>
-  
+
 <style scoped lang='sass'>
 @use '@styles/colours'
 
